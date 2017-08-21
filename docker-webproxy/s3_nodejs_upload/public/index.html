@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>S3 atlas-loadtest bucket Upload </title>
+    <! Source: https://cdnjs.cloudflare.com/ajax/libs/
+    jquery/2.1.4
+   jqueryui/1.11.4
+   blueimp-file-upload/9.5.7
+    -->
+    <script src="./jquery.min.js"></script>
+    <script src="./jquery-ui.min.js"></script>
+    <script src="./jquery.fileupload.js"></script>
+    <script src="./client.js"></script>
+    <script>
+    //getUrlVars()["prefix"]
+      $(function() {
+        initS3FileUpload($('#fileInput'),getUrlVars()["prefix"]);
+      });
+    
+    function getUrlVars() {
+    	var vars = {};
+   		var parts = window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(m,key,value) {
+      		vars[key] = value;
+    	});
+    	return vars;
+  	}
+  </script>
+  </head>
+  <body>
+    <h1>Upload to S3 atlas-loadtest bucket for project directory: </h1>
+    
+    <p>
+        <script type="text/javascript">
+            document.write(getUrlVars()["prefix"]);
+    	</script>
+    		
+    </p>
+    <p>Upload artifacts related to current load test execution</p>
+    <form>
+      <input id="fileInput" type="file" name="file" />
+    </form>
+  </body>
+</html>
+

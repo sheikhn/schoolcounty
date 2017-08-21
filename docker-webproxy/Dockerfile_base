@@ -1,0 +1,26 @@
+#
+# Dockerfile for a jmeter client.
+# A container from this image will be ready to run a jmeter client.
+#
+# Usage:
+#  docker run -d -p 80:80 artifactory.prodwest.citrixsaassbe.net:5000/loadtest/webproxy-docker
+#
+FROM artifactory.prodwest.citrixsaassbe.net:5000/loadtest/centos-jdk
+MAINTAINER Nuruddin Sheikh <sheikh.nuruddin@logmein.com>
+
+ENV docker_path=.
+
+RUN yum -y --setopt=tsflags=nodocs update && \
+    yum -y install sudo system-config-services initscripts
+
+RUN sudo yum -y install  wget tar curl
+RUN curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+RUN yum install -y nodejs && \
+    yum install -y gcc-c++ make && \
+    yum install -y openssh-clients
+
+RUN yum -y --setopt=tsflags=nodocs install httpd && \
+    yum -y --setopt=tsflags=nodocs install mod_ssl && \
+    yum clean all
+RUN npm install express && \
+	npm install moment
