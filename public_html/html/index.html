@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>S3 Bucket Listing Generator</title>
+</head>
+<body>
+  <div id="navigation"></div>
+  <div id="listing"></div>
+<?php header('Access-Control-Allow-Origin: *'); ?>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+   var S3BL_IGNORE_PATH = true;
+   var BUCKET_NAME = 'schoolcounty';
+   var BUCKET_URL = 'https://s3-us-west-2.amazonaws.com';
+   var BUCKET_URL1 = 'http://54.187.25.119/schoolcounty';
+   var S3B_ROOT_DIR = '';
+  // var S3B_SORT = 'DEFAULT';
+  // var EXCLUDE_FILE = 'index.html';
+  // var AUTO_TITLE = true;
+  // var S3_REGION = 's3-us-west-1'; // 's3' for us-east-1
+</script>
+<script type="text/javascript" src="./list.js"></script>
+</body>
+</html>
