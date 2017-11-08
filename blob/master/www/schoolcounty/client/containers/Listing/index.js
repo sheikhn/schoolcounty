@@ -9,7 +9,7 @@ import GoogleMapReact from 'google-map-react';
 import Listingpage from "../../components/Listingpage/index";
 import Filter from "../../components/Listingpage/Filter";
 /**Actions**/
-import * as SchoolActions from '../../actions/schools'
+import {getFilterParams, getSchoolsList} from '../../actions/schools'
 
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -19,6 +19,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
       componentWillMount(){
           //action to get schools data
           this.props.getSchools();
+          console.log('filter');
           this.props.getFilterParams();
       }
 
@@ -95,10 +96,10 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         getSchools: () => {
-            dispatch(SchoolActions.getSchoolsList())
+            dispatch(getSchoolsList())
         },
         getFilterParams: () => {
-          dispatch(SchoolActions.getFilterParams());
+          dispatch(getFilterParams());
         }
     }
 }

@@ -9,9 +9,8 @@ import App from './containers/App'
 import Listing from './containers/Listing'
 import SchoolCompare from './containers/SchoolCompare'
 import SchoolDetails from './containers/SchoolDetails'
-import configure from './store'
+import store from './store'
 
-const store = configure()
 const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(

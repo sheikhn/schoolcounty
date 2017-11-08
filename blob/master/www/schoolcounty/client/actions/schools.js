@@ -1,4 +1,4 @@
-
+import axios from 'axios';
 export const getSchoolsList = () => {
     let schoolList = [{
             name: 'Wisdom School',
@@ -99,8 +99,16 @@ export const getSchoolsList = () => {
     return {type: "GET_SCHOOLS_SUCCESS", payload: schoolList};
 }
 
+const getStatesRepo = () => {
+    return axios({
+        method: 'GET',
+        url: 'http://35.154.63.76/api/states/get-states',
+    })
+};
+
 
 export const getFilterParams = () => {
+/*
     let levelOfEducation = [
         'Primary(1st-4th)',
         'Middle(5th-7th)',
@@ -112,16 +120,37 @@ export const getFilterParams = () => {
         'STATE BOARD',
         'ICSE',
         'IB'
-    ]
+    ];
     let type = [
         'Army',
         'KV',
         'International'
-    ]
+    ];
 
-    let filterParams = {levelOfEducation, syllabus, type}
+    let filterParams = {levelOfEducation, syllabus, type}*/
 
-    return {type: "GET_FILTER_PARAMS_SUCCESS", payload: filterParams};
+    return function(dispatch) {
+        dispatch({type: "GET_FILTER_PARAMS_SUCCESS", payload: {}});
+    };
+
+
+    /*return function(dispatch){
+    console.log(dispatch);
+        getStatesRepo()
+            .then((response) => {
+            if (response.status) {
+                let states = response.data;
+
+
+                let filterParams = {levelOfEducation, syllabus, type, states}
+
+                dispatch({type: "GET_FILTER_PARAMS_SUCCESS", payload: filterParams});
+            }
+        })
+            .catch((err) => {
+                console.log(err)
+            });
+    }*/
 }
 
 

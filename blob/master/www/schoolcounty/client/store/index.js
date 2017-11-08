@@ -1,26 +1,22 @@
+import { applyMiddleware, createStore, compose } from "redux"
 
-import { createStore, applyMiddleware } from 'redux'
+import thunk from "redux-thunk"
+import promise from "redux-promise-middleware"
 
-import { logger } from '../middleware'
-import rootReducer from '../reducers'
+import reducer from "../reducers/index.js"
 
-export default function configure(initialState) {
-  const create = window.devToolsExtension
-    ? window.devToolsExtension()(createStore)
-    : createStore
+const middlewares = [promise(), thunk];
 
-  const createStoreWithMiddleware = applyMiddleware(
-    logger
-  )(create)
-
-  const store = createStoreWithMiddleware(rootReducer, initialState)
-
-  if (module.hot) {
-    module.hot.accept('../reducers', () => {
-      const nextReducer = require('../reducers')
-      store.replaceReducer(nextReducer)
-    })
-  }
-
-  return store
+if (process.env.NODE_ENV === 'development') {
+    /*const logger = require('redux-logger')  // load only in dev mode
+    middlewares.push(logger());*/
 }
+
+const middleware = applyMiddleware(...middlewares)
+
+const enhancers = compose(
+    middleware,
+    process.env.NODE_ENV === 'development' && window.devToolsExtension ? window.devToolsExtension() : f => f,
+); // using redux chrome extentions in dev mode
+
+export default createStore(reducer, enhancers);

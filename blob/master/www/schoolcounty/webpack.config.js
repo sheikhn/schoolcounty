@@ -17,7 +17,7 @@ module.exports = {
         ]
     },
     output: {
-        path: path.join(__dirname, './static'),
+        path: path.join(__dirname, './client/static'),
         filename: 'bundle.js',
     },
     watch: true,
