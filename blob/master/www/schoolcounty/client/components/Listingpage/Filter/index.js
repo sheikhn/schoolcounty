@@ -5,7 +5,7 @@ class Filter extends Component {
         super(props);
     }
 
-    getTypes() {
+    /*getTypes() {
         const {filterParams} =  this.props;
         let schoolTypeList = []
         let typesOfSchools = filterParams.typeOfSchool;
@@ -20,9 +20,9 @@ class Filter extends Component {
         }
 
         return schoolTypeList
-    }
+    }*/
 
-    getLevels() {
+    /*getLevels() {
         const {filterParams} =  this.props;
         let schoolLevelList = []
         let schoolsLevels = filterParams.level;
@@ -36,9 +36,9 @@ class Filter extends Component {
             );
         }
         return schoolLevelList;
-    }
+    }*/
 
-    getSyllabus() {
+    /*getSyllabus() {
         const {filterParams} =  this.props;
         let syllabusList = [];
         let syllabusTypes = filterParams.typesOfSyllabus;
@@ -50,23 +50,64 @@ class Filter extends Component {
         }
 
         return syllabusList;
+    }*/
+
+    getStates() {
+
+        const {filterParams} =  this.props;
+        let stateList = [];
+        let states = filterParams.states.list;
+        console.log('stalist',filterParams);
+        for (let stateIndex in states ) {
+            let state = states[stateIndex];
+            
+            stateList.push(
+                <option key={stateIndex} value={'.option'+stateIndex}>{state.name}</option>
+            );
+        }
+        console.log('states',stateList);
+        return stateList;
+    }
+
+    getLevels() {
+        const {filterParams} =  this.props;
+        let levelList = [];
+
+        let levels = filterParams.level.list;
+        for (let levelIndex in levels ) {
+            let level = levels[levelIndex];
+            
+            levelList.push(
+            <li key={levelIndex}>
+                    <input class="filter" data-filter=".radio2" type="radio" name="radioButton" id={'radio'+levelIndex}/>
+                    <label class="radio-label" for={'radio'+levelIndex}>{level.level}</label>
+                </li>
+                /*<option key={levelIndex} value={'.option'+levelIndex}>{level.level}</option>*/
+            );
+        }
+        console.log('asdsda', levelList);
+        return levelList;
     }
 
 
     render() {
-        const {filterParams} =  this.props;
-        if (!filterParams.fetched) {
+        let {filterParams} =  this.props;
+        console.log('comporen',filterParams);
+        console.log(this.props.filterParams.states.fetched);
+       console.log(filterParams.level.fetched);
+        if (!filterParams.states.fetched && !filterParams.level.fetched) {
             return null;
         }
 
 
-        let schoolTypeList = this.getTypes();
+       let schoolLevelList = this.getLevels();
 
-        let schoolLevelList = this.getLevels();
+        console.log('level ;list', schoolLevelList);       
+        let stateList = this.getStates();
 
-        let syllabusList = this.getSyllabus();
 
         return (
+
             <div class="cd-filter">
                 <form>
                     <div class="cd-filter-block">
@@ -77,6 +118,22 @@ class Filter extends Component {
                         </div>
                     </div>
 
+                    
+
+                   
+                    <div class="cd-filter-block">
+                        <h4>States</h4>
+
+                        <div class="cd-filter-content">
+                            <div class="cd-select cd-filters">
+                                <select class="filter" name="selectThis" id="selectThis">
+                                    <option value="">Choose a state</option>
+                                    {stateList}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                   
                     <div class="cd-filter-block">
                         <h4>Levels of Education</h4>
 
@@ -85,26 +142,6 @@ class Filter extends Component {
                         </ul>
                     </div>
 
-                    <div class="cd-filter-block">
-                        <h4>Select</h4>
-
-                        <div class="cd-filter-content">
-                            <div class="cd-select cd-filters">
-                                <select class="filter" name="selectThis" id="selectThis">
-                                    <option value="">Choose an Syllabus</option>
-                                    {syllabusList}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cd-filter-block">
-                        <h4>Type of School</h4>
-
-                        <ul class="cd-filter-content cd-filters list">
-                            {schoolTypeList}
-                        </ul>
-                    </div>
                 </form>
 
                 <a href="#0" class="cd-close">Close</a>

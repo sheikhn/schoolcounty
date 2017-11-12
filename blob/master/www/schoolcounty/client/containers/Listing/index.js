@@ -9,7 +9,7 @@ import GoogleMapReact from 'google-map-react';
 import Listingpage from "../../components/Listingpage/index";
 import Filter from "../../components/Listingpage/Filter";
 /**Actions**/
-import {getFilterParams, getSchoolsList} from '../../actions/schools'
+import {getFilterStates, getFilterLevels,getSchoolsList} from '../../actions/schools'
 
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -20,12 +20,14 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
           //action to get schools data
           this.props.getSchools();
           console.log('filter');
-          this.props.getFilterParams();
+          this.props.getFilterStates();
+          this.props.getFilterLevels();
+
       }
 
     render() {
 
-
+      console.log('contian',this.props.schools.schoolFilter);
         return (
             <div>
               <Header />
@@ -50,6 +52,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
                 <section class="cd-gallery">
                   <div id="map">
                     <GoogleMapReact
+                        api={'AIzaSyB-GPNJUs1UB3t-rQ8dQAd7BNAyDBYOCXQ'}
                         defaultCenter={{lat: 12.971599, lng: 77.594563}}
                         defaultZoom={10}
                     >
@@ -98,8 +101,11 @@ function mapDispatchToProps(dispatch) {
         getSchools: () => {
             dispatch(getSchoolsList())
         },
-        getFilterParams: () => {
-          dispatch(getFilterParams());
+        getFilterStates: () => {
+          dispatch(getFilterStates());
+        },
+        getFilterLevels: () => {
+          dispatch(getFilterLevels());
         }
     }
 }

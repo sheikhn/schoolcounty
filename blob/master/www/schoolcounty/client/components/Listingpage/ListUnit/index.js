@@ -15,7 +15,7 @@ class ListUnit extends Component {
                     </div>
                     <div class="fl pll">
                       <div class="ptm notranslate">
-                        <div class="mtm "></div>
+                         <div class="mtm "></div>
                         <div><Link style={{lineHeight: '1.1em'}} class="open-sans_sb mbs font-size-medium rs-schoolName" to={"/details"}>{this.props.name}
 
 

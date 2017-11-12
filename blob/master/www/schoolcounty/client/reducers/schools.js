@@ -7,12 +7,26 @@ const initialState = {
       list: []
   },
     schoolFilter: {
-        fetching: false,
-        fetched: false,
-        error: false,
-        level: [],
-        typeOfSchool: [],
-        typesOfSyllabus: []
+        level: {
+            fetching: false,
+            fetched: false,
+            error: false,
+        },
+        typeOfSchool: {
+            fetching: false,
+            fetched: false,
+            error: false,
+        },
+        typesOfSyllabus: {
+            fetching: false,
+            fetched: false,
+            error: false,
+        },
+        states:{
+            fetching: false,
+            fetched: false,
+            error: false,
+        }
     },
     schoolUnit:{
       fetching:false,
@@ -45,15 +59,28 @@ const schools = (state = initialState, action) => {
                 }
             })
 
-        case 'GET_FILTER_PARAMS_SUCCESS':
-            return Object.assign({}, state, {
-                schoolFilter: {
-                    fetched: true,
-                    level: action.payload.levelOfEducation,
-                    typeOfSchool: action.payload.type,
-                    typesOfSyllabus: action.payload.syllabus
-                }
-            })
+        case 'GET_FILTER_STATES_SUCCESS':
+            let schoolFilter1 = state.schoolFilter;
+            schoolFilter1.states = {
+                        fetched: true,
+                        list : action.payload
+            };
+
+             return Object.assign({}, state, {
+                schoolFilter: schoolFilter1 
+              });
+
+        case 'GET_FILTER_LEVELS_SUCCESS':
+            let schoolFilter2 = state.schoolFilter;
+
+            schoolFilter2.level = {
+                        fetched: true,
+                        list : action.payload
+            };
+
+             return Object.assign({}, state, {
+                schoolFilter: schoolFilter2 
+              });
 
         case 'GET_COMPARESCHOOLUNIT_SUCCESS':
             return Object.assign({},state,{

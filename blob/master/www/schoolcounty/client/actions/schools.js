@@ -1,4 +1,5 @@
-import axios from 'axios';
+
+import {getStatesRepo,getLevelsRepo} from './apicalls/school';
 export const getSchoolsList = () => {
     let schoolList = [{
             name: 'Wisdom School',
@@ -99,58 +100,45 @@ export const getSchoolsList = () => {
     return {type: "GET_SCHOOLS_SUCCESS", payload: schoolList};
 }
 
-const getStatesRepo = () => {
-    return axios({
-        method: 'GET',
-        url: 'http://35.154.63.76/api/states/get-states',
-    })
-};
 
 
-export const getFilterParams = () => {
-/*
-    let levelOfEducation = [
-        'Primary(1st-4th)',
-        'Middle(5th-7th)',
-        'Secondary(8th-10th)',
-    ];
-
-    let syllabus = [
-        'CBSE',
-        'STATE BOARD',
-        'ICSE',
-        'IB'
-    ];
-    let type = [
-        'Army',
-        'KV',
-        'International'
-    ];
-
-    let filterParams = {levelOfEducation, syllabus, type}*/
-
-    return function(dispatch) {
-        dispatch({type: "GET_FILTER_PARAMS_SUCCESS", payload: {}});
-    };
 
 
-    /*return function(dispatch){
-    console.log(dispatch);
+export const getFilterStates = () => {
+
+    return function(dispatch, getState){
         getStatesRepo()
             .then((response) => {
-            if (response.status) {
-                let states = response.data;
+            if (response.data.status) {
+               // console.log(response);
+                let states = response.data.data;
 
-
-                let filterParams = {levelOfEducation, syllabus, type, states}
-
-                dispatch({type: "GET_FILTER_PARAMS_SUCCESS", payload: filterParams});
+                dispatch({type: "GET_FILTER_STATES_SUCCESS", payload: states});
             }
         })
             .catch((err) => {
                 console.log(err)
             });
-    }*/
+    }
+}
+
+export const getFilterLevels = () => {
+
+    return function(dispatch){
+        getLevelsRepo()
+            .then((response) => {
+            if (response.data.status) {
+               // console.log(response);
+                let levels = response.data.data;
+
+
+                dispatch({type: "GET_FILTER_LEVELS_SUCCESS", payload: levels});
+            }
+        })
+            .catch((err) => {
+                console.log(err)
+            });
+    }
 }
 
 
