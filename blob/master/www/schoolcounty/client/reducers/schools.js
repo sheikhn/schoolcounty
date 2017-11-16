@@ -12,17 +12,22 @@ const initialState = {
             fetched: false,
             error: false,
         },
-        typeOfSchool: {
+        infrastructure: {
             fetching: false,
             fetched: false,
             error: false,
         },
-        typesOfSyllabus: {
+        syllabus: {
             fetching: false,
             fetched: false,
             error: false,
         },
         states:{
+            fetching: false,
+            fetched: false,
+            error: false,
+        },
+        activities:{
             fetching: false,
             fetched: false,
             error: false,
@@ -80,6 +85,42 @@ const schools = (state = initialState, action) => {
 
              return Object.assign({}, state, {
                 schoolFilter: schoolFilter2 
+              });
+
+        case 'GET_FILTER_SYLLABUS_SUCCESS':
+            let schoolFilter3 = state.schoolFilter;
+
+            schoolFilter3.syllabus = {
+                        fetched: true,
+                        list : action.payload
+            };
+
+             return Object.assign({}, state, {
+                schoolFilter: schoolFilter3 
+              });
+
+        case 'GET_FILTER_INFRASTRUCTURE_SUCCESS':
+            let schoolFilter4 = state.schoolFilter;
+
+            schoolFilter4.infrastructure = {
+                        fetched: true,
+                        list : action.payload
+            };
+
+             return Object.assign({}, state, {
+                schoolFilter: schoolFilter4 
+              });
+
+        case 'GET_FILTER_ACTIVITIES_SUCCESS':
+            let schoolFilter5 = state.schoolFilter;
+
+            schoolFilter5.activities = {
+                        fetched: true,
+                        list : action.payload
+            };
+
+             return Object.assign({}, state, {
+                schoolFilter: schoolFilter5 
               });
 
         case 'GET_COMPARESCHOOLUNIT_SUCCESS':

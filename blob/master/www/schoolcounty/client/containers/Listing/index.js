@@ -9,7 +9,7 @@ import GoogleMapReact from 'google-map-react';
 import Listingpage from "../../components/Listingpage/index";
 import Filter from "../../components/Listingpage/Filter";
 /**Actions**/
-import {getFilterStates, getFilterLevels,getSchoolsList} from '../../actions/schools'
+import {getFilterStates, getFilterLevels,getSchoolsList,getFilterSyllabus,getFilterInfrastructure,getFilterActivities} from '../../actions/schools'
 
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -22,6 +22,9 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
           console.log('filter');
           this.props.getFilterStates();
           this.props.getFilterLevels();
+          this.props.getFilterSyllabus();
+          this.props.getFilterInfrastructure();
+          this.props.getFilterActivities();
 
       }
 
@@ -106,6 +109,18 @@ function mapDispatchToProps(dispatch) {
         },
         getFilterLevels: () => {
           dispatch(getFilterLevels());
+        },
+        getFilterSyllabus: () => {
+          dispatch(getFilterSyllabus());
+        },
+        getFilterInfrastructure: () => {
+          dispatch(getFilterInfrastructure());
+        },
+        getFilterInfrastructure: () => {
+          dispatch(getFilterInfrastructure());
+        },
+        getFilterActivities: () => {
+          dispatch(getFilterActivities());
         }
     }
 }

@@ -13,3 +13,27 @@ export const getLevelsRepo = () => {
         url: 'http://localhost:8000/api/level/get-levels',
     })
 };
+
+   
+
+export const getSyllabusRepo = () => {
+    return axios({
+        method: 'GET',
+        url: 'http://localhost:8000/api/syllabus/get-syllabus',
+    })
+};
+
+
+export const getInfrastructureRepo = () => {
+    return axios({
+        method: 'GET',
+        url: 'http://localhost:8000/api/infrastructure/get-infrastructure',
+    })
+};
+
+export const getActivitiesRepo = () => {
+    return axios({
+        method: 'GET',
+        url: 'http://localhost:8000/api/activities/get-activities',
+    })
+};

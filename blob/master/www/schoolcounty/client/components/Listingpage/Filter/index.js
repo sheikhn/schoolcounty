@@ -5,59 +5,11 @@ class Filter extends Component {
         super(props);
     }
 
-    /*getTypes() {
-        const {filterParams} =  this.props;
-        let schoolTypeList = []
-        let typesOfSchools = filterParams.typeOfSchool;
-        for (let typeIndex in typesOfSchools ) {
-            let schoolType = typesOfSchools[typeIndex];
-            schoolTypeList.push(
-                <li key={typeIndex}>
-                    <input class="filter" data-filter=".radio2" type="radio" name="radioButton" id={'radio'+typeIndex}/>
-                    <label class="radio-label" for={'radio'+typeIndex}>{schoolType}</label>
-                </li>
-            );
-        }
-
-        return schoolTypeList
-    }*/
-
-    /*getLevels() {
-        const {filterParams} =  this.props;
-        let schoolLevelList = []
-        let schoolsLevels = filterParams.level;
-        for (let levelIndex in  schoolsLevels) {
-            let schoolLevel = schoolsLevels[levelIndex];
-            schoolLevelList.push(
-                <li key={levelIndex}>
-                    <input class="filter" data-filter={'.check1'+levelIndex} type="checkbox" id={'checkbox'+levelIndex}/>
-                    <label class="checkbox-label" for={'checkbox'+levelIndex}>{schoolLevel}</label>
-                </li>
-            );
-        }
-        return schoolLevelList;
-    }*/
-
-    /*getSyllabus() {
-        const {filterParams} =  this.props;
-        let syllabusList = [];
-        let syllabusTypes = filterParams.typesOfSyllabus;
-        for (let syllabusIndex in syllabusTypes ) {
-            let syllabusType = syllabusTypes[syllabusIndex];
-            syllabusList.push(
-                <option key={syllabusIndex} value={'.option'+syllabusIndex}>{syllabusType}</option>
-            );
-        }
-
-        return syllabusList;
-    }*/
-
     getStates() {
 
         const {filterParams} =  this.props;
         let stateList = [];
         let states = filterParams.states.list;
-        console.log('stalist',filterParams);
         for (let stateIndex in states ) {
             let state = states[stateIndex];
             
@@ -65,8 +17,23 @@ class Filter extends Component {
                 <option key={stateIndex} value={'.option'+stateIndex}>{state.name}</option>
             );
         }
-        console.log('states',stateList);
         return stateList;
+    }
+
+    getSyllabus() {
+
+        const {filterParams} =  this.props;
+        let syllabusList = [];
+        let syllabus = filterParams.syllabus.list;
+        
+        for (let syllabusIndex in syllabus ) {
+            
+            syllabusList.push(
+               <option key={syllabusIndex} value={'.option'+syllabusIndex}>{syllabus[syllabusIndex].syllabus}</option>
+            );
+        }
+        
+        return syllabusList;
     }
 
     getLevels() {
@@ -82,28 +49,63 @@ class Filter extends Component {
                     <input class="filter" data-filter=".radio2" type="radio" name="radioButton" id={'radio'+levelIndex}/>
                     <label class="radio-label" for={'radio'+levelIndex}>{level.level}</label>
                 </li>
-                /*<option key={levelIndex} value={'.option'+levelIndex}>{level.level}</option>*/
             );
         }
-        console.log('asdsda', levelList);
         return levelList;
+    }
+
+
+    getInfrastructure() {
+        const {filterParams} =  this.props;
+        let infraList = [];
+
+        let infrastructures = filterParams.infrastructure.list;
+        for (let infrastructuresIndex in infrastructures ) {
+            let infrastructure = infrastructures[infrastructuresIndex];
+            
+            infraList.push(
+            <li key={infrastructuresIndex}>
+                    <input class="filter" data-filter=".radio2" type="radio" name="radioButton" id={'radio'+infrastructuresIndex}/>
+                    <label class="radio-label" for={'radio'+infrastructuresIndex}>{infrastructure.name}</label>
+                </li>
+            );
+        }
+        return infraList;
+    }
+
+    getActivities() {
+        const {filterParams} =  this.props;
+        let activitieList = [];
+
+        let activities = filterParams.activities.list;
+        for (let activitiesIndex in activities ) {
+            let activitie = activities[activitiesIndex];
+            
+            activitieList.push(
+            <li key={activitiesIndex}>
+                    <input class="filter" data-filter=".radio2" type="radio" name="radioButton" id={'radio'+activitiesIndex}/>
+                    <label class="radio-label" for={'radio'+activitiesIndex}>{activitie.name}</label>
+                </li>
+            );
+        }
+        return activitieList;
     }
 
 
     render() {
         let {filterParams} =  this.props;
-        console.log('comporen',filterParams);
-        console.log(this.props.filterParams.states.fetched);
-       console.log(filterParams.level.fetched);
-        if (!filterParams.states.fetched && !filterParams.level.fetched) {
+       // console.log('comporen',filterParams);
+       
+        if (!filterParams.states.fetched && !filterParams.level.fetched && !filterParams.syllabus.fetched && !filterParams.infrastructure.fetched) {
             return null;
         }
 
 
-       let schoolLevelList = this.getLevels();
-
-        console.log('level ;list', schoolLevelList);       
+       let schoolLevelList = this.getLevels();     
         let stateList = this.getStates();
+        let syllabusList =this.getSyllabus();
+        let infrastructureList = this.getInfrastructure();
+        let activitiesList = this.getActivities();
 
 
         return (
@@ -118,7 +120,21 @@ class Filter extends Component {
                         </div>
                     </div>
 
-                    
+
+
+
+                    <div class="cd-filter-block">
+                        <h4>Syllabus</h4>
+
+                        <div class="cd-filter-content">
+                            <div class="cd-select cd-filters">
+                                <select class="filter" name="selectThis" id="selectThis">
+                                    <option value="">Choose a Syllabus</option>
+                                    {syllabusList}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
                    
                     <div class="cd-filter-block">
@@ -139,6 +155,22 @@ class Filter extends Component {
 
                         <ul class="cd-filter-content cd-filters list">
                             {schoolLevelList}
+                        </ul>
+                    </div>
+
+                    <div class="cd-filter-block">
+                        <h4>Infrastructure</h4>
+
+                        <ul class="cd-filter-content cd-filters list">
+                            {infrastructureList}
+                        </ul>
+                    </div>
+
+                    <div class="cd-filter-block">
+                        <h4>Extra and Co Curricular Activities</h4>
+
+                        <ul class="cd-filter-content cd-filters list">
+                            {activitiesList}
                         </ul>
                     </div>
 

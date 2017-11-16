@@ -1,5 +1,5 @@
 
-import {getStatesRepo,getLevelsRepo} from './apicalls/school';
+import {getStatesRepo,getLevelsRepo,getSyllabusRepo,getInfrastructureRepo,getActivitiesRepo} from './apicalls/school';
 export const getSchoolsList = () => {
     let schoolList = [{
             name: 'Wisdom School',
@@ -133,6 +133,64 @@ export const getFilterLevels = () => {
 
 
                 dispatch({type: "GET_FILTER_LEVELS_SUCCESS", payload: levels});
+            }
+        })
+            .catch((err) => {
+                console.log(err)
+            });
+    }
+}
+
+export const getFilterSyllabus = () => {
+
+    return function(dispatch){
+        getSyllabusRepo()
+            .then((response) => {
+            if (response.data.status) {
+               //console.log('action',response);
+                let syllabus = response.data.data;
+
+
+                dispatch({type: "GET_FILTER_SYLLABUS_SUCCESS", payload: syllabus});
+            }
+        })
+            .catch((err) => {
+                console.log(err)
+            });
+    }
+}
+
+export const getFilterInfrastructure = () => {
+
+    return function(dispatch){
+        getInfrastructureRepo()
+            .then((response) => {
+            if (response.data.status) {
+               //console.log('action',response);
+                let infrastructure = response.data.data;
+
+
+                dispatch({type: "GET_FILTER_INFRASTRUCTURE_SUCCESS", payload: infrastructure});
+            }
+        })
+            .catch((err) => {
+                console.log(err)
+            });
+    }
+}
+
+
+export const getFilterActivities = () => {
+
+    return function(dispatch){
+        getActivitiesRepo()
+            .then((response) => {
+            if (response.data.status) {
+               //console.log('action',response);
+                let activities = response.data.data;
+
+
+                dispatch({type: "GET_FILTER_ACTIVITIES_SUCCESS", payload: activities});
             }
         })
             .catch((err) => {
