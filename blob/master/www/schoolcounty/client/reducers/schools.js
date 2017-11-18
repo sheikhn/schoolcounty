@@ -1,5 +1,6 @@
 
 const initialState = {
+    getFilter:{},
   schoolList: {
       fetching: false,
       fetched: false,
@@ -137,6 +138,14 @@ const schools = (state = initialState, action) => {
                     fetched:true,
                     schoolDetail:action.payload
                 }
+            })
+
+        case 'SET_FILTER_PARAMS':
+            let getFilter = state.getFilter;
+            Object.assign(getFilter, action.payload);
+            console.log(getFilter);
+            return Object.assign({},state,{
+                getFilter:getFilter
             })
 
         default:

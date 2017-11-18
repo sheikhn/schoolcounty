@@ -9,7 +9,7 @@ import GoogleMapReact from 'google-map-react';
 import Listingpage from "../../components/Listingpage/index";
 import Filter from "../../components/Listingpage/Filter";
 /**Actions**/
-import {getFilterStates, getFilterLevels,getSchoolsList,getFilterSyllabus,getFilterInfrastructure,getFilterActivities} from '../../actions/schools'
+import {getFilterStates, getFilterLevels,getSchoolsList,getFilterSyllabus,getFilterInfrastructure,getFilterActivities, setFilter} from '../../actions/schools'
 
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -25,12 +25,11 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
           this.props.getFilterSyllabus();
           this.props.getFilterInfrastructure();
           this.props.getFilterActivities();
-
       }
 
     render() {
 
-      console.log('contian',this.props.schools.schoolFilter);
+      console.log('contian',this.props.schools.schoolList);
         return (
             <div>
               <Header />
@@ -82,7 +81,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
                   <div class="cd-fail-message">No results found</div>
                 </section>
 
-                <Filter filterParams={this.props.schools.schoolFilter}/>
+                <Filter setFilterParams={this.props.setFilters} filterParams={this.props.schools.schoolFilter}/>
 
                 <a href="#0" class="cd-filter-trigger">Filters</a>
               </main>
@@ -121,6 +120,9 @@ function mapDispatchToProps(dispatch) {
         },
         getFilterActivities: () => {
           dispatch(getFilterActivities());
+        },
+        setFilters: (params) => {
+          dispatch(setFilter(params));
         }
     }
 }

@@ -37,3 +37,12 @@ export const getActivitiesRepo = () => {
         url: 'http://localhost:8000/api/activities/get-activities',
     })
 };
+
+export const getSchoollistRepo = (filter) => {
+    return axios({
+        method: 'GET',
+        url: 'http://localhost:8000/api/school/get-schools',
+        params: filter
+    })
+};
+

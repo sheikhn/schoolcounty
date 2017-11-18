@@ -7,6 +7,9 @@ class ListUnit extends Component {
     }
 
   render() {
+
+     console.log('comporenschools',this.props);
+
     return (
        <div class="row">
                   <div class="col-xs-7 col-sm-5 col-md-7 col-lg-6 clearfix school-info">
@@ -16,20 +19,21 @@ class ListUnit extends Component {
                     <div class="fl pll">
                       <div class="ptm notranslate">
                          <div class="mtm "></div>
-                        <div><Link style={{lineHeight: '1.1em'}} class="open-sans_sb mbs font-size-medium rs-schoolName" to={"/details"}>{this.props.name}
+                        <div>
+                        <Link style={{lineHeight: '1.1em'}} class="open-sans_sb mbs font-size-medium rs-schoolName" to={"/details"}>{this.props.name}
 
 
                         </Link></div>
-                        <div class=" font-size-small rs-schoolAddress">{this.props.location}</div>
+                        <div class=" font-size-small rs-schoolAddress"></div>
                         <div class="clearfix visible-xs font-size-small">
                           <div class="prs fl ">Public district</div>
-                          <div class="fl">9-12,{this.props.website}</div>
+                          <div class="fl">9-12,</div>
                         </div>
                       </div>
                       <div class="font-size-small mvm clearfix ptm ">
                         <div class="fl">
                           <span class="prm vam"><span class="iconx16-stars i-16-orange-star i-16-star-2"></span><span class="iconx16-stars i-16-grey-star i-16-star-3"></span></span>
-                          <a class="font-size-small js-reviewCount" href="/missouri/moberly/1249-Moberly-Sr.-High-School/#Reviews">{this.props.review} reviews</a>
+                          <a class="font-size-small js-reviewCount" href="/missouri/moberly/1249-Moberly-Sr.-High-School/#Reviews">reviews</a>
                         </div>
                         <div class="phm fl">|</div>
                         <div class="prs fl">Public district</div>
@@ -46,7 +50,7 @@ class ListUnit extends Component {
                         <a href="/missouri/moberly/1249-Moberly-Sr.-High-School/">
 
   <span class="gs-rating circle-rating--5 circle-rating--xtra-small ma">
-      {this.props.schoolrating}
+      
   </span>
 
                           <div class="pts"></div>

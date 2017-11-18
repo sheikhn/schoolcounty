@@ -5,6 +5,13 @@ class Filter extends Component {
         super(props);
     }
 
+    setParams() {
+
+        this.props.setFilterParams(params);
+    }
+
+
+
     getStates() {
 
         const {filterParams} =  this.props;
@@ -25,11 +32,11 @@ class Filter extends Component {
         const {filterParams} =  this.props;
         let syllabusList = [];
         let syllabus = filterParams.syllabus.list;
-        
+        console.log(syllabus);
         for (let syllabusIndex in syllabus ) {
             
             syllabusList.push(
-               <option key={syllabusIndex} value={'.option'+syllabusIndex}>{syllabus[syllabusIndex].syllabus}</option>
+               <option key={syllabusIndex} value={syllabus[syllabusIndex].id}>{syllabus[syllabusIndex].syllabus}</option>
             );
         }
         
@@ -46,8 +53,8 @@ class Filter extends Component {
             
             levelList.push(
             <li key={levelIndex}>
-                    <input class="filter" data-filter=".radio2" type="radio" name="radioButton" id={'radio'+levelIndex}/>
-                    <label class="radio-label" for={'radio'+levelIndex}>{level.level}</label>
+                    <input class="filter" data-filter=".check1" type="checkbox" id={'checkbox'+levelIndex}/>
+                    <label class="checkbox-label" for={'checkbox'+levelIndex}>{level.level}</label>
                 </li>
             );
         }
@@ -91,6 +98,15 @@ class Filter extends Component {
         return activitieList;
     }
 
+    setSyllabusFilter(event) {
+        var e = document.getElementById("selectSyllabus");
+        var syllabusId = e.options[e.selectedIndex].value;
+
+        this.props.setFilterParams({'syllabus': syllabusId})
+        //this.props.setFilterParams({'cca': '1'})
+
+    }
+
 
     render() {
         let {filterParams} =  this.props;
@@ -128,7 +144,7 @@ class Filter extends Component {
 
                         <div class="cd-filter-content">
                             <div class="cd-select cd-filters">
-                                <select class="filter" name="selectThis" id="selectThis">
+                                <select onChange={() => this.setSyllabusFilter()} class="filter" name="selectThis" id="selectSyllabus">
                                     <option value="">Choose a Syllabus</option>
                                     {syllabusList}
                                 </select>
