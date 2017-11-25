@@ -132,7 +132,7 @@ const schools = (state = initialState, action) => {
                 }
             })
 
-        case 'GET_COMPARESCHOOLDETAIL_SUCCESS':
+        case 'GET_SCHOOLDETAIL_SUCCESS':
             return Object.assign({},state,{
                 schoolDetail:{
                     fetched:true,

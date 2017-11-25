@@ -15,9 +15,10 @@ class Listingpage extends Component{
         let schoolList = schools.list;
         for (let schoolIndex in schoolList) {
             let schoolDetails = schoolList[schoolIndex];
+            console.log('schoolDetails', schoolDetails);
             schoolListDiv.push(
                 <li class="mix color-3 check1 radio2 option3" key = {schoolIndex}>
-                    <ListUnit name={schoolDetails.name} location={schoolDetails.location} review={schoolDetails.review} website={schoolDetails.website} schoolrating={schoolDetails.schoolrating} />
+                    <ListUnit details = {schoolDetails}      />
                 </li>
             );
         }

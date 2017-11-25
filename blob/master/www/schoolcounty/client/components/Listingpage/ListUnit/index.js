@@ -8,7 +8,8 @@ class ListUnit extends Component {
 
   render() {
 
-     console.log('comporenschools',this.props);
+    console.log('compolis',this.props);
+     const {details} = this.props;
 
     return (
        <div class="row">
@@ -20,7 +21,8 @@ class ListUnit extends Component {
                       <div class="ptm notranslate">
                          <div class="mtm "></div>
                         <div>
-                        <Link style={{lineHeight: '1.1em'}} class="open-sans_sb mbs font-size-medium rs-schoolName" to={"/details"}>{this.props.name}
+                        <Link style={{lineHeight: '1.1em'}} class="open-sans_sb mbs font-size-medium rs-schoolName" 
+                        to={"/details"} query={{ id: details.id }}>{details.name}
 
 
                         </Link></div>

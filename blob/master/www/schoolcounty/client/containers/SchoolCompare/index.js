@@ -23,7 +23,7 @@ class SchoolCompare extends Component {
 
     render() {
         const { todos, actions, children , schoolList} = this.props
-        console.log(schoolList);
+        //console.log(schoolList);
         if (!schoolList.fetched){
              return (<div>
                  no data
@@ -52,7 +52,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         getSchools: () => {
-            console.log('called');
+            //console.log('called');
             dispatch(SchoolUnitAction.getSchoolsList());
         }
     }

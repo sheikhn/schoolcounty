@@ -46,3 +46,11 @@ export const getSchoollistRepo = (filter) => {
     })
 };
 
+export const getSchoolByIdRepo = (id) => {
+    return axios({
+        method: 'GET',
+        url: 'http://localhost:8000/api/school/get-school',
+        params: {'id': id}
+    })
+};
+

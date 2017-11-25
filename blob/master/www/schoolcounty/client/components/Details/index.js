@@ -10,20 +10,19 @@ class Details extends Component{
         super(props);
     }
 
-    componentWillMount(){
-        this.props.getSchoolDetails();
-    }
+    
 
     render(){
 
-        const { todos, actions, children , schoolDetail} = this.props
+        const { schoolDetail} = this.props
+        console.log('sore',this.props);
         if (!schoolDetail.fetched){
             return (<div>
                 no data
             </div>)
         }
 
-        const {schoolData, schoolCountyRating, schoolFacilities} = schoolDetail.schoolDetail;
+        const {details} = schoolDetail.schoolDetail;
 
         return(
 
@@ -48,7 +47,7 @@ class Details extends Component{
                     <div id="hero">
                         <div class="container">
                             <div class="school-name-container">
-                                <h1 class="school-name">{schoolData.name}
+                                <h1 class="school-name">{details.name}
 
                                 </h1>
 
@@ -66,19 +65,19 @@ class Details extends Component{
                                     <a href="#Neighborhood" class="js-gaClick" data-ga-click-category="Profile" data-ga-click-action="Hero links" data-ga-click-label="Neighborhood">
 
                                         <div class="badge-and-content">
-                                            <span class="badge icon-location"></span><span class="content">{schoolData.address}</span>
+                                            <span class="badge icon-location"></span><span class="content">{details.address}</span>
                                         </div>
 
                                     </a>
                                 </div>
                                 <div class="school-contact__item school-contact__district-name">
-                                    <a class="js-gaClick" data-ga-click-category="Profile" data-ga-click-action="Hero links" data-ga-click-label="District" href="/missouri/moberly/moberly-school-district/">{schoolData.district} District</a>
+                                    <a class="js-gaClick" data-ga-click-category="Profile" data-ga-click-action="Hero links" data-ga-click-label="District" href="/missouri/moberly/moberly-school-district/">{details.district} District</a>
                                 </div>
                                 <div class="school-contact__item school-contact__phone">
                                     <a href="tel:(660) 269-2660" class="js-gaClick" data-ga-click-category="Profile" data-ga-click-action="Hero links" data-ga-click-label="Phone">
 
                                         <div class="badge-and-content">
-                                            <span class="badge icon-phone"></span><span class="content">            {schoolData.phonenumber}
+                                            <span class="badge icon-phone"></span><span class="content">            {details.phonenumber}
 </span>
                                         </div>
 
@@ -94,7 +93,7 @@ class Details extends Component{
                                     <div class="gs-rating-with-label">
                                         <div class="gs-rating-with-label__rating">
                                             <div class="rs-gs-rating circle-rating--large-responsive circle-rating--5">
-                                                {schoolData.schoolscountyrating}<span class="rating-circle-small">/10</span>
+                                                {details.schoolscountyrating}<span class="rating-circle-small">/10</span>
                                             </div>
                                         </div>
                                         <div class="gs-rating-with-label__label">
@@ -111,7 +110,7 @@ class Details extends Component{
 
                                     <div class="five-star-rating ">
   <span class="five-star-rating__number">
-      {schoolData.reviews}
+      {details.reviews}
   </span>
                                         <span class="rs-five-star-rating five-star-rating__stars">
 
@@ -124,29 +123,29 @@ class Details extends Component{
                                 </div>
                                 <div class="school-info__item">
                                     <div class="label">Grades</div>
-                                    <div>{schoolData.grades}</div>
+                                    <div>{details.grades}</div>
                                 </div>
                                 <div class="school-info__item">
                                     <div class="label">Students</div>
-                                    <div>{schoolData.students}</div>
+                                    <div>{details.students}</div>
                                 </div>
                                 <div class="school-info__item">
                                     <div class="label">Type</div>
-                                    <div>{schoolData.type}</div>
+                                    <div>{details.type}</div>
                                 </div>
 
                                 <div class="vertical-items js-toggle-target" style={{display: 'none'}}>
                                     <div class="school-info__item-mobile">
                                         <span class="label">Grades</span>
-                                        <span>{schoolData.grades}</span>
+                                        <span>{details.grades}</span>
                                     </div>
                                     <div class="school-info__item-mobile">
                                         <span class="label">Students</span>
-                                        <span>{schoolData.students}</span>
+                                        <span>{details.students}</span>
                                     </div>
                                     <div class="school-info__item-mobile">
                                         <span class="label">Type</span>
-                                        <span>{schoolData.type}</span>
+                                        <span>{details.type}</span>
                                     </div>
                                 </div>
 
@@ -217,7 +216,7 @@ class Details extends Component{
                                                         <span>Test scores</span>
                                                         <span class="icon-chevron-right"></span>
                                                         <span class="gs-rating circle-rating--5 circle-rating--xtra-small">
-                                                            {schoolData.testscore}<span class="denominator">/10</span>
+                                                            {details.testscore}<span class="denominator">/10</span>
           </span>
                                                     </a>
                                                 </div>
@@ -228,7 +227,7 @@ class Details extends Component{
                                                         <span>College readiness</span>
                                                         <span class="icon-chevron-right"></span>
                                                         <span class="gs-rating circle-rating--5 circle-rating--xtra-small">
-          {schoolData.collegescore}<span class="denominator">/10</span>
+          {details.collegescore}<span class="denominator">/10</span>
           </span>
                                                     </a>
                                                 </div>
@@ -238,7 +237,7 @@ class Details extends Component{
                                                         <span>Advanced courses</span>
                                                         <span class="icon-chevron-right"></span>
                                                         <span class="gs-rating circle-rating--5 circle-rating--xtra-small">
-                                                            {schoolData.advancescore}<span class="denominator">/10</span></span>
+                                                            {details.advancescore}<span class="denominator">/10</span></span>
                                                     </a>
                                                 </div>
 
@@ -255,7 +254,7 @@ class Details extends Component{
                                                         <span>Attendance</span>
                                                         <span class="icon-chevron-right"></span>
                                                         <span class="gs-rating circle-rating--5 circle-rating--xtra-small">
-                                                            {schoolData.attendancescore}<span class="denominator">/10</span></span>
+                                                            {details.attendancescore}<span class="denominator">/10</span></span>
                                                     </a>
                                                 </div>
 
@@ -266,7 +265,7 @@ class Details extends Component{
                                                         <span>Low-income students</span>
                                                         <span class="icon-chevron-right"></span>
                                                         <span class="gs-rating circle-rating--4 circle-rating--xtra-small">
-          {schoolData.lowincscore}<span class="denominator">/10</span>
+          {details.lowincscore}<span class="denominator">/10</span>
           </span>
                                                     </a>
                                                 </div>
@@ -276,7 +275,7 @@ class Details extends Component{
                                                         <span>Disabled Students</span>
                                                         <span class="icon-chevron-right"></span>
                                                         <span class="gs-rating circle-rating--5 circle-rating--xtra-small">
-                                                            {schoolData.disabilitiesscore}<span class="denominator">/10</span></span>
+                                                            {details.disabilitiesscore}<span class="denominator">/10</span></span>
                                                     </a>
                                                 </div>
 
@@ -293,7 +292,7 @@ class Details extends Component{
                                                         <span>Students</span>
                                                         <span class="icon-chevron-right"></span>
                                                         <span class="gs-rating circle-rating--5 circle-rating--xtra-small">
-                                                            {schoolData.studentscore}<span class="denominator">/10</span></span>
+                                                            {details.studentscore}<span class="denominator">/10</span></span>
                                                     </a>
                                                 </div>
 
@@ -303,7 +302,7 @@ class Details extends Component{
                                                         <span>Discipline</span>
                                                         <span class="icon-chevron-right"></span>
                                                         <span class="gs-rating circle-rating--5 circle-rating--xtra-small">
-                                                            {schoolData.disciplinescore}<span class="denominator">/10</span></span>
+                                                            {details.disciplinescore}<span class="denominator">/10</span></span>
                                                     </a>
                                                 </div>
 
@@ -313,7 +312,7 @@ class Details extends Component{
                                                         <span>Teachers &amp; staff</span>
                                                         <span class="icon-chevron-right"></span>
                                                         <span class="gs-rating circle-rating--5 circle-rating--xtra-small">
-                                                            {schoolData.teacherscore}<span class="denominator">/10</span></span>
+                                                            {details.teacherscore}<span class="denominator">/10</span></span>
                                                     </a>
                                                 </div>
 
@@ -323,7 +322,7 @@ class Details extends Component{
                                                         <span>Neighborhood</span>
                                                         <span class="icon-chevron-right"></span>
                                                         <span class="gs-rating circle-rating--5 circle-rating--xtra-small">
-                                                            {schoolData.neighborscore}<span class="denominator">/10</span></span>
+                                                            {details.neighborscore}<span class="denominator">/10</span></span>
                                                     </a>
                                                 </div>
 
@@ -366,7 +365,7 @@ class Details extends Component{
                                                     <div class="row">
                                                         <div class="col-xs-12 col-md-8">
                                                             <div class="circle-rating--5 circle-rating--medium">
-                                                                {schoolData.testscore}<span class="rating-circle-small">/10</span>
+                                                                {details.testscore}<span class="rating-circle-small">/10</span>
                                                             </div>
                                                             <div class="title-container">
                                                                 <div>
@@ -407,25 +406,25 @@ class Details extends Component{
                                                             </div>
                                                             <div class="rating-row clearfix">
                                                                 <div class="gs-rating-inline circle-rating--xtra-small circle-rating--5">
-                                                                    {schoolData.y16score}<span class="rating-circle-small">/10</span>
+                                                                    {details.y16score}<span class="rating-circle-small">/10</span>
                                                                 </div>
                                                                 2016
                                                             </div>
                                                             <div class="rating-row clearfix">
                                                                 <div class="gs-rating-inline circle-rating--xtra-small circle-rating--5">
-                                                                    {schoolData.y15score}<span class="rating-circle-small">/10</span>
+                                                                    {details.y15score}<span class="rating-circle-small">/10</span>
                                                                 </div>
                                                                 2015
                                                             </div>
                                                             <div class="rating-row clearfix">
                                                                 <div class="gs-rating-inline circle-rating--xtra-small circle-rating--5">
-                                                                    {schoolData.y14score}<span class="rating-circle-small">/10</span>
+                                                                    {details.y14score}<span class="rating-circle-small">/10</span>
                                                                 </div>
                                                                 2014
                                                             </div>
                                                             <div class="rating-row clearfix">
                                                                 <div class="gs-rating-inline circle-rating--xtra-small circle-rating--6">
-                                                                    {schoolData.y13score}<span class="rating-circle-small">/10</span>
+                                                                    {details.y13score}<span class="rating-circle-small">/10</span>
                                                                 </div>
                                                                 2013
                                                             </div>
@@ -453,7 +452,7 @@ class Details extends Component{
                                                                 <div class="col-sm-1"></div>
                                                                 <div class="col-xs-9 col-sm-4">
                                                                     <div class="bar-graph-container">
-                                                                        <div class="score">{schoolData.engscore}%</div>
+                                                                        <div class="score">{details.engscore}%</div>
                                                                         <div class="viz">
                                                                             <div class="item-bar">
                                                                                 <div class="single-bar-viz">
@@ -463,7 +462,7 @@ class Details extends Component{
                                                                                 </div>
                                                                             </div>
                                                                             <div class="state-average">
-                                                                                State avg: {schoolData.avgengscore}%
+                                                                                State avg: {details.avgengscore}%
                                                                             </div>
                                                                         </div>
 
@@ -482,7 +481,7 @@ class Details extends Component{
                                                                 <div class="col-sm-1"></div>
                                                                 <div class="col-xs-9 col-sm-4">
                                                                     <div class="bar-graph-container">
-                                                                        <div class="score">{schoolData.govscore}%</div>
+                                                                        <div class="score">{details.govscore}%</div>
                                                                         <div class="viz">
                                                                             <div class="item-bar">
                                                                                 <div class="single-bar-viz">
@@ -492,7 +491,7 @@ class Details extends Component{
                                                                                 </div>
                                                                             </div>
                                                                             <div class="state-average">
-                                                                                State avg: {schoolData.avggovscore}%
+                                                                                State avg: {details.avggovscore}%
                                                                             </div>
                                                                         </div>
 
@@ -511,7 +510,7 @@ class Details extends Component{
                                                                 <div class="col-sm-1"></div>
                                                                 <div class="col-xs-9 col-sm-4">
                                                                     <div class="bar-graph-container">
-                                                                        <div class="score">{schoolData.eng2score}%</div>
+                                                                        <div class="score">{details.eng2score}%</div>
                                                                         <div class="viz">
                                                                             <div class="item-bar">
                                                                                 <div class="single-bar-viz">
@@ -521,7 +520,7 @@ class Details extends Component{
                                                                                 </div>
                                                                             </div>
                                                                             <div class="state-average">
-                                                                                State avg: {schoolData.avgeng2score}%
+                                                                                State avg: {details.avgeng2score}%
                                                                             </div>
                                                                         </div>
 
@@ -702,7 +701,7 @@ class Details extends Component{
                                                     <div class="row">
                                                         <div class="col-xs-12 col-md-12">
                                                             <div class="circle-rating--5 circle-rating--medium">
-                                                                {schoolData.readinessscore}<span class="rating-circle-small">/10</span>
+                                                                {details.readinessscore}<span class="rating-circle-small">/10</span>
                                                             </div>
                                                             <div class="title-container">
                                                                 <div>
@@ -736,7 +735,7 @@ class Details extends Component{
                                                             <div class="col-sm-1"></div>
                                                             <div class="col-xs-12 col-sm-6">
                                                                 <div class="bar-graph-container">
-                                                                    <div class="score">{schoolData.graduationscore}%</div>
+                                                                    <div class="score">{details.graduationscore}%</div>
                                                                     <div class="person-bar-viz">
                                                                         <div class="person-progress">
                                                                             <div class="background">
@@ -748,7 +747,7 @@ class Details extends Component{
 
                                                                             </div>
                                                                         </div>
-                                                                        <div class="state-average" style={{paddingLeft: '0px'}}>State avg: {schoolData.avggraduationscore}</div>
+                                                                        <div class="state-average" style={{paddingLeft: '0px'}}>State avg: {details.avggraduationscore}</div>
                                                                     </div>
                                                                 </div>
 
@@ -770,7 +769,7 @@ class Details extends Component{
                                                             <div class="col-sm-1"></div>
                                                             <div class="col-xs-12 col-sm-6">
                                                                 <div class="bar-graph-container">
-                                                                    <div class="score">{schoolData.avgactscore}</div>
+                                                                    <div class="score">{details.avgactscore}</div>
                                                                     <div class="viz">
                                                                         <div class="item-bar">
                                                                             <div class="single-bar-viz">
@@ -797,7 +796,7 @@ class Details extends Component{
                                                             <div class="col-sm-1"></div>
                                                             <div class="col-xs-12 col-sm-6">
                                                                 <div class="bar-graph-container">
-                                                                    <div class="score">{schoolData.participationscore}%</div>
+                                                                    <div class="score">{details.participationscore}%</div>
                                                                     <div class="person-bar-viz">
                                                                         <div class="person-progress">
                                                                             <div class="background">
@@ -812,7 +811,7 @@ class Details extends Component{
                                                                                 <span style={{left:'11.72%', top: '1px'}}></span>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="state-average" style={{paddingLeft: '0px'}}>State avg: {schoolData.avgparticipationscore}%</div>
+                                                                        <div class="state-average" style={{paddingLeft: '0px'}}>State avg: {details.avgparticipationscore}%</div>
                                                                     </div>
                                                                 </div>
 
@@ -940,32 +939,32 @@ class Details extends Component{
                                                     <div class="legend-separator js-highlightPieChart clearfix" data-slice-id="0" >
                                                         <div class="legend-square" style={{float:'left',backgroundColor: '#0f69c4'}}></div>
                                                         <div class="legend-title" style={{float:'left'}}>Hindu</div>
-                                                        <div class="legend-title" style={{float: 'right'}}>{schoolData.hindu}%</div>
+                                                        <div class="legend-title" style={{float: 'right'}}>{details.hindu}%</div>
                                                     </div>
                                                     <div class="legend-separator js-highlightPieChart clearfix" data-slice-id="1" >
                                                         <div class="legend-square" style={{float:'left',backgroundColor: '#2bdc99'}}></div>
                                                         <div class="legend-title" style={{float:'left'}}>Muslim</div>
-                                                        <div class="legend-title" style={{float: 'right'}}>{schoolData.muslim}%</div>
+                                                        <div class="legend-title" style={{float: 'right'}}>{details.muslim}%</div>
                                                     </div>
                                                     <div class="legend-separator js-highlightPieChart clearfix" data-slice-id="2" >
                                                         <div class="legend-square" style={{float:'left',backgroundColor: '#f1830f'}}></div>
                                                         <div class="legend-title" style={{float:'left'}}>Christian</div>
-                                                        <div class="legend-title" style={{float: 'right'}}>{schoolData.christian}%</div>
+                                                        <div class="legend-title" style={{float: 'right'}}>{details.christian}%</div>
                                                     </div>
                                                     <div class="legend-separator js-highlightPieChart clearfix" data-slice-id="3" >
                                                         <div class="legend-square" style={{float:'left',backgroundColor: '#f1e634'}}></div>
                                                         <div class="legend-title" style={{float:'left'}}>Sikh</div>
-                                                        <div class="legend-title" style={{float: 'right'}}>{schoolData.sikh}%</div>
+                                                        <div class="legend-title" style={{float: 'right'}}>{details.sikh}%</div>
                                                     </div>
                                                     <div class="legend-separator js-highlightPieChart clearfix" data-slice-id="4" >
                                                         <div class="legend-square" style={{float:'left',backgroundColor: '#6f2eb4'}}></div>
                                                         <div class="legend-title" style={{float:'left'}}>SC/ST </div>
-                                                        <div class="legend-title" style={{float: 'right'}}>{schoolData.scst}%</div>
+                                                        <div class="legend-title" style={{float: 'right'}}>{details.scst}%</div>
                                                     </div>
                                                     <div class="legend-separator js-highlightPieChart clearfix" data-slice-id="5" >
                                                         <div class="legend-square" style={{float:'left',backgroundColor: '#ef60d0'}}></div>
                                                         <div class="legend-title" style={{float:'left'}}>NRIs</div>
-                                                        <div class="legend-title" style={{float: 'right'}}>&lt;{schoolData.nri}%</div>
+                                                        <div class="legend-title" style={{float: 'right'}}>&lt;{details.nri}%</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1241,10 +1240,10 @@ class Details extends Component{
                     </div>
 
                     <div class="static-container" id="Reviews" style={{marginTop: '30px'}}><div class="rating-container"><div class="row"><div class="col-xs-12 col-lg-3"><div class="rating-container__title">Recent comments</div></div><div class="col-xs-12 col-lg-9"><div class="review-list"><div></div><div><div class="user-reviews-container"><div class="row"><div class="col-xs-12 col-sm-2 user-info-column"><div class="avatar icon-avatar-1"></div><div class="user-type">Parent</div></div><div class="col-xs-12 col-sm-10 review-list-column"><div class="five-star-review"><div class="header">Overall experience</div><div class="answer"><span class="five-stars"><span class="icon-star filled-star"></span><span class="icon-star filled-star"></span><span class="icon-star filled-star"></span><span class="icon-star filled-star"></span><span class="icon-star filled-star"></span></span></div>
-                        <div class="comment"><span>{schoolData.comment1}</span></div></div><div class="type-and-date">Submitted by a parent · {schoolData.comment1date}</div><div class="review-button-bar"><span class="button"><span class="icon-flag"></span><span class="hidden-xs-inline pls">Report Review</span></span></div></div></div></div><div class="user-reviews-container"><div class="row"><div class="col-xs-12 col-sm-2 user-info-column"><div class="avatar icon-avatar-1"></div><div class="user-type">Parent</div></div><div class="col-xs-12 col-sm-10 review-list-column"><div class="five-star-review"><div class="header">Overall experience</div><div class="answer"><span class="five-stars"><span class="icon-star filled-star"></span><span class="icon-star filled-star"></span><span class="icon-star filled-star"></span><span class="icon-star filled-star"></span><span class="icon-star filled-star"></span></span></div>
-                        <div class="comment"><span><span>{schoolData.comment2}... <a>More</a></span></span></div></div><div class="type-and-date">Submitted by a parent ·{schoolData.comment2date} </div><div class="review-button-bar"><span class="button"><span class="icon-flag"></span><span class="hidden-xs-inline pls">Report Review</span></span></div></div></div></div><div class="user-reviews-container"><div class="row"><div class="col-xs-12 col-sm-2 user-info-column"><div class="avatar icon-avatar-2"></div><div class="user-type">Student</div></div><div class="col-xs-12 col-sm-10 review-list-column"><div class="five-star-review"><div class="header">Overall experience</div><div class="answer"><span class="five-stars"><span class="icon-star filled-star"></span><span class="icon-star empty-star"></span><span class="icon-star empty-star"></span><span class="icon-star empty-star"></span><span class="icon-star empty-star"></span></span></div>
-                        <div class="comment"><span><span>{schoolData.comment3}... <a href="javascript:void(0);">More</a></span></span></div></div><div class="type-and-date">Submitted by a student ·{schoolData.comment3date}</div><div class="review-button-bar"><span class="button"><span class="icon-flag"></span><span class="hidden-xs-inline pls">Report Review</span></span></div></div></div></div><div class="user-reviews-container"><div class="row"><div class="col-xs-12 col-sm-2 user-info-column"><div class="avatar icon-avatar-2"></div><div class="user-type">Student</div></div><div class="col-xs-12 col-sm-10 review-list-column"><div class="five-star-review"><div class="header">Overall experience</div><div class="answer"><span class="five-stars"><span class="icon-star filled-star"></span><span class="icon-star empty-star"></span><span class="icon-star empty-star"></span><span class="icon-star empty-star"></span><span class="icon-star empty-star"></span></span></div>
-                        <div class="comment"><span><span>{schoolData.comment4}... <a href="javascript:void(0);">More</a></span></span></div></div><div class="type-and-date">Submitted by a student · {schoolData.comment4date}</div><div class="review-button-bar"><span class="button"><span class="icon-flag"></span><span class="hidden-xs-inline pls">Report Review</span></span></div>
+                        <div class="comment"><span>{details.comment1}</span></div></div><div class="type-and-date">Submitted by a parent · {details.comment1date}</div><div class="review-button-bar"><span class="button"><span class="icon-flag"></span><span class="hidden-xs-inline pls">Report Review</span></span></div></div></div></div><div class="user-reviews-container"><div class="row"><div class="col-xs-12 col-sm-2 user-info-column"><div class="avatar icon-avatar-1"></div><div class="user-type">Parent</div></div><div class="col-xs-12 col-sm-10 review-list-column"><div class="five-star-review"><div class="header">Overall experience</div><div class="answer"><span class="five-stars"><span class="icon-star filled-star"></span><span class="icon-star filled-star"></span><span class="icon-star filled-star"></span><span class="icon-star filled-star"></span><span class="icon-star filled-star"></span></span></div>
+                        <div class="comment"><span><span>{details.comment2}... <a>More</a></span></span></div></div><div class="type-and-date">Submitted by a parent ·{details.comment2date} </div><div class="review-button-bar"><span class="button"><span class="icon-flag"></span><span class="hidden-xs-inline pls">Report Review</span></span></div></div></div></div><div class="user-reviews-container"><div class="row"><div class="col-xs-12 col-sm-2 user-info-column"><div class="avatar icon-avatar-2"></div><div class="user-type">Student</div></div><div class="col-xs-12 col-sm-10 review-list-column"><div class="five-star-review"><div class="header">Overall experience</div><div class="answer"><span class="five-stars"><span class="icon-star filled-star"></span><span class="icon-star empty-star"></span><span class="icon-star empty-star"></span><span class="icon-star empty-star"></span><span class="icon-star empty-star"></span></span></div>
+                        <div class="comment"><span><span>{details.comment3}... <a href="javascript:void(0);">More</a></span></span></div></div><div class="type-and-date">Submitted by a student ·{details.comment3date}</div><div class="review-button-bar"><span class="button"><span class="icon-flag"></span><span class="hidden-xs-inline pls">Report Review</span></span></div></div></div></div><div class="user-reviews-container"><div class="row"><div class="col-xs-12 col-sm-2 user-info-column"><div class="avatar icon-avatar-2"></div><div class="user-type">Student</div></div><div class="col-xs-12 col-sm-10 review-list-column"><div class="five-star-review"><div class="header">Overall experience</div><div class="answer"><span class="five-stars"><span class="icon-star filled-star"></span><span class="icon-star empty-star"></span><span class="icon-star empty-star"></span><span class="icon-star empty-star"></span><span class="icon-star empty-star"></span></span></div>
+                        <div class="comment"><span><span>{details.comment4}... <a href="javascript:void(0);">More</a></span></span></div></div><div class="type-and-date">Submitted by a student · {details.comment4date}</div><div class="review-button-bar"><span class="button"><span class="icon-flag"></span><span class="hidden-xs-inline pls">Report Review</span></span></div>
                     </div></div></div></div><div class="show-more__button">Show more</div></div></div></div></div></div>
 
 
@@ -1257,24 +1256,6 @@ class Details extends Component{
     }
 }
 
-function mapStateToProps(state) {
-
-    return {
-        schoolDetail: state.schools.schoolDetail
-    }
-}
 
 
-function mapDispatchToProps(dispatch) {
-    return {
-        getSchoolDetails: () => {
-            console.log('called');
-            dispatch(SchoolDetailsAction.getCompareSchoolDetailsParams())
-        },
-    }
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Details)
+export default Details;
