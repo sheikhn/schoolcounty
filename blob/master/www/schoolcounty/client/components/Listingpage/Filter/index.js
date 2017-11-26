@@ -127,7 +127,7 @@ class Filter extends Component {
 		    }
 		}
 			var levelId = selected;
-			console.log('sylafle',selected);
+			//console.log('sylafle',selected);
 		this.props.setFilterParams({'level': levelId})
 	}
 

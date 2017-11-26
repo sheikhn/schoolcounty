@@ -4,11 +4,20 @@ import {Link} from 'react-router'
 class ListUnit extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+          ids : []
+        }
+    }
+
+    selectSchool(id) {
+      
+      this.props.addSchoolToCompare(id);
+    //this.props.setFilterParams({'compareId': compareId})
     }
 
   render() {
 
-    console.log('compolis',this.props);
+   // console.log('compolis',this.props);
      const {details} = this.props;
 
     return (
@@ -69,8 +78,10 @@ class ListUnit extends Component {
                     <div class="clearfix">
                       <div class="btn btn-default full-width clearfix mbm db fl js-compareSchoolButton" id="js-compareSchool1249" data-schoolname="Moberly Sr. High School" data-schoolstate="mo" data-schoolid="1249" data-schoolrating="5"
                            style={{cursor: 'pointer', backgroundColor: '#9dc997',padding: '.6em 2em'}}>
-                        <input type="checkbox" style={{    margin: '2px !important',    float: 'left'}}/>
-                          <div class="fl js-compareSchoolsButtonText"><Link to={"/compare"} data-toggle="tooltip" title="Compare">Compare</Link></div>
+                        <input class="selectCompare" value={details.id} type="checkbox" onClick={() => this.selectSchool(details.id)} style={{    margin: '2px !important',    float: 'left'}}/>
+                          <div class="fl js-compareSchoolsButtonText">
+                              <p class={this.props.allowCompare ? '' :'disabled'} onClick={() => this.props.compareSchools()}  data-toggle="tooltip" title="Compare">Compare</p>
+                          </div>
                       </div>
                     </div>
                   </div>

@@ -11,10 +11,13 @@ class Comparepage extends Component{
 
     getSchoolUnits() {
 
+       
         let schoolList = this.props.schoolUnits;
+
         let schoolUnitHtml = [];
         for (let unitIndex in schoolList) {
             let schoolUnitData = schoolList[unitIndex];
+            
             schoolUnitHtml.push(
                 <CompareUnit schoolunit={schoolUnitData}/>
             );

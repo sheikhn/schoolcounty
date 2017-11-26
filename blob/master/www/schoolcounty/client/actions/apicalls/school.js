@@ -46,6 +46,14 @@ export const getSchoollistRepo = (filter) => {
     })
 };
 
+export const getCompareSchoollistRepo = (ids) => {
+    return axios({
+        method: 'GET',
+        url: 'http://localhost:8000/api/school/get-schools',
+        params: {id: ids}
+    })
+};
+
 export const getSchoolByIdRepo = (id) => {
     return axios({
         method: 'GET',

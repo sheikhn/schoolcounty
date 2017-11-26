@@ -6,7 +6,7 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Comparepage from '../../components/Comparepage/index'
 
-import * as SchoolUnitAction from '../../actions/schools'
+import {getCompareSchoolsList} from '../../actions/schools'
 
 
 class SchoolCompare extends Component {
@@ -17,14 +17,15 @@ class SchoolCompare extends Component {
 
     componentWillMount(){
         //action to get schools data
-        this.props.getSchools();
+        console.log(this.props.location.state.ids);
+        this.props.getSchools(this.props.location.state.ids);
     }
 
 
     render() {
-        const { todos, actions, children , schoolList} = this.props
-        //console.log(schoolList);
-        if (!schoolList.fetched){
+        const {compareSchoolList} = this.props;
+       // console.log('comapre',this.props);
+        if (!compareSchoolList.fetched){
              return (<div>
                  no data
              </div>)
@@ -34,7 +35,7 @@ class SchoolCompare extends Component {
             <div>
                 <Header />
 
-                <Comparepage schoolUnits={schoolList.list} />
+                <Comparepage schoolUnits={compareSchoolList.list} />
 
                 <Footer/>
             </div>
@@ -45,15 +46,14 @@ class SchoolCompare extends Component {
 function mapStateToProps(state) {
 
     return {
-        schoolList: state.schools.schoolList,
+        compareSchoolList: state.schools.schoolList,
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        getSchools: () => {
-            //console.log('called');
-            dispatch(SchoolUnitAction.getSchoolsList());
+        getSchools: (selectedSchools) => {
+            dispatch(getCompareSchoolsList(selectedSchools));
         }
     }
 }

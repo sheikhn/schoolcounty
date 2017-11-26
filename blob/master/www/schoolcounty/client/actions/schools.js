@@ -1,6 +1,6 @@
 
 import {getStatesRepo,getLevelsRepo,getSyllabusRepo,getInfrastructureRepo,
-    getActivitiesRepo,getSchoollistRepo,getSchoolByIdRepo} from './apicalls/school';
+    getActivitiesRepo,getSchoollistRepo,getCompareSchoollistRepo} from './apicalls/school';
 
 export const getSchoolsList = () => {
     return function(dispatch, getState){
@@ -18,7 +18,20 @@ export const getSchoolsList = () => {
 }
 
 
-
+export const getCompareSchoolsList = (ids) => {
+    return function(dispatch, getState){
+        let state = getState();
+        getCompareSchoollistRepo(ids)
+            .then((response) => {
+                 let compareSchoolList =response.data.data;
+                 //console.log('action',response);
+                 dispatch({type: "GET_SCHOOLS_SUCCESS", payload: compareSchoolList});
+            })
+               .catch((err) =>{
+                    console.log(err)
+                });
+    }
+}
 
 
 

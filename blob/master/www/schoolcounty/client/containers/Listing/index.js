@@ -16,6 +16,11 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
   class Listing extends Component {
 
+    constructor(props) {
+      super(props);
+      console.log(props);
+    }
+
       componentWillMount(){
           //action to get schools data
           this.props.getSchools();
@@ -31,7 +36,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
       console.log('contian',this.props.schools.schoolList);
         return (
-            <div>
+            <div>   
               <Header />
               <main class="cd-main-content" style={{top: '50px'}}>
 
@@ -67,7 +72,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
                   </div>
                   <ul>
 
-                     <Listingpage schools={this.props.schools.schoolList}/>
+                     <Listingpage schools={this.props.schools.schoolList} history={this.props.history}/>
 
                     <li class="mix">
                       <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>

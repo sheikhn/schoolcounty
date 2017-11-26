@@ -15,7 +15,7 @@ class Details extends Component{
     render(){
 
         const { schoolDetail} = this.props
-        console.log('sore',this.props);
+        //console.log('sore',this.props);
         if (!schoolDetail.fetched){
             return (<div>
                 no data

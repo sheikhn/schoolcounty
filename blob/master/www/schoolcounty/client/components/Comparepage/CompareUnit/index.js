@@ -8,8 +8,11 @@ class CompareUnit extends Component{
     }
 
     getNameAddress(){
+
+
         const {schoolunit} =this.props;
         let details= schoolunit;
+       // console.log('compore',details.name);
 
         return (
             <div class="mam">
@@ -18,7 +21,7 @@ class CompareUnit extends Component{
                     style={{lineHeight: "1.1em"}} class="open-sans_sb mbs font-size-medium"
                     to={"/details"}>{details.name}
                 </Link></div>
-                <div class="ptm full-width js-gradeLevel" style={{height: " 31px"}}>{details.address} Road,
+                <div class="ptm full-width js-gradeLevel" style={{height: " 31px"}}> Road,
                     bangalore-21
                 </div>
             </div>
