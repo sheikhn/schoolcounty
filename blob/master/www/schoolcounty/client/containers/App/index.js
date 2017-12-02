@@ -6,9 +6,22 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Home from '../../components/Home'
 
+import {getSchoolsList} from '../../actions/schools'
 
 class App extends Component {
+
+    constructor(props) {
+      super(props);
+    }
+
+    componentWillMount(){
+          //action to get schools data
+          this.props.getSchools();
+      }
+
+
   render() {
+    console.log('home',this.props.schools.schoolList);
     const { todos, actions, children } = this.props
     return (
         <body>
@@ -21,8 +34,23 @@ class App extends Component {
         <Footer/>
         </body>
 
-  )
+    )
   }
+}
+
+function mapStateToProps(state) {
+    return {
+        schools: state.schools
+    }
+}
+
+
+function mapDispatchToProps(dispatch) {
+    return {
+        getSchools: () => {
+            dispatch(getSchoolsList())
+        }
+    }
 }
 
 
@@ -30,5 +58,6 @@ class App extends Component {
 
 
 export default connect(
-
+  mapStateToProps,
+  mapDispatchToProps
 )(App)

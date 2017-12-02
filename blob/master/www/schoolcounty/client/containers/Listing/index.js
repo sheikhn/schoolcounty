@@ -8,6 +8,9 @@ import Footer from '../../components/Footer'
 import GoogleMapReact from 'google-map-react';
 import Listingpage from "../../components/Listingpage/index";
 import Filter from "../../components/Listingpage/Filter";
+import SearchFilter from "../../components/Listingpage/SearchFilter"
+import Search from "../../components/Home/Search"
+
 /**Actions**/
 import {getFilterStates, getFilterLevels,getSchoolsList,getFilterSyllabus,getFilterInfrastructure,getFilterActivities, setFilter} from '../../actions/schools'
 
@@ -18,7 +21,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
     constructor(props) {
       super(props);
-      console.log(props);
+     // console.log(props);
     }
 
       componentWillMount(){
@@ -38,23 +41,15 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
         return (
             <div>   
               <Header />
-              <main class="cd-main-content" style={{top: '50px'}}>
+              <main class="cd-main-content" style={{top: '70px'}}>
 
-
-
-                <div class="cd-tab-filter-wrapper">
+              <div class="cd-tab-filter-wrapper" style={{top: '70px'}}>
                   <div class="cd-tab-filter">
-                    <ul class="cd-filters">
-                      <li class="placeholder">
-                        <a data-type="all" href="#0">All</a>
-                      </li>
-                      <li class="filter"><a class="selected" href="#0" data-type="all">All</a></li>
-                      <li class="filter" data-filter=".color-1"><a href="#0" data-type="color-1">Distance</a></li>
-                      <li class="filter" data-filter=".color-2"><a href="#0" data-type="color-2">Budget</a></li>
-                      <li class="filter" data-filter=".color-3"><a href="#0" data-type="color-3">Ranking</a></li>
-                    </ul>
+                   <Search />
                   </div>
                 </div>
+              
+                
 
                 <section class="cd-gallery">
                   <div id="map">

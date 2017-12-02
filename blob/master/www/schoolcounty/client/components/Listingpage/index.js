@@ -28,7 +28,7 @@ class Listingpage extends Component{
 
     compareSchools() {
         //console.log('compare', this.state.selectedSchools.length);
-        //console.log(this.props);
+        //zconsole.log(this.props);
         if (this.state.selectedSchools.length > 1) {
             //redirect to compare with selectedschoold ids
             let schools = this.state.selectedSchools;

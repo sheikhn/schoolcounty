@@ -12,6 +12,7 @@ class CompareUnit extends Component{
 
         const {schoolunit} =this.props;
         let details= schoolunit;
+        
        // console.log('compore',details.name);
 
         return (
