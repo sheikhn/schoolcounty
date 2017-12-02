@@ -27,7 +27,6 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
       componentWillMount(){
           //action to get schools data
           this.props.getSchools();
-          console.log('filter');
           this.props.getFilterStates();
           this.props.getFilterLevels();
           this.props.getFilterSyllabus();
@@ -37,7 +36,6 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
     render() {
 
-      console.log('contian',this.props.schools.schoolList);
         return (
             <div>   
               <Header />
@@ -45,7 +43,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
               <div class="cd-tab-filter-wrapper" style={{top: '70px'}}>
                   <div class="cd-tab-filter">
-                   <Search />
+                      <Search setFilter={this.props.setFilter} schools={this.props.schools.schoolList}/>
                   </div>
                 </div>
               
@@ -81,7 +79,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
                   <div class="cd-fail-message">No results found</div>
                 </section>
 
-                <Filter setFilterParams={this.props.setFilters} filterParams={this.props.schools.schoolFilter}/>
+                <Filter setFilterParams={this.props.setFilter} filterParams={this.props.schools.schoolFilter}/>
 
                 <a href="#0" class="cd-filter-trigger">Filters</a>
               </main>
@@ -121,7 +119,8 @@ function mapDispatchToProps(dispatch) {
         getFilterActivities: () => {
           dispatch(getFilterActivities());
         },
-        setFilters: (params) => {
+        setFilter: (params) => {
+            console.log(params);
           dispatch(setFilter(params));
         }
     }

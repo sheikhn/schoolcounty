@@ -9,10 +9,7 @@ class SearchFilter extends Component{
 
 	render(){
 
-		return(
-				
-
-			)
+		return(null);
 	}
 
 }

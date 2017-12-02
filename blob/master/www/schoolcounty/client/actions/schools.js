@@ -1,6 +1,6 @@
 
 import {getStatesRepo,getLevelsRepo,getSyllabusRepo,getInfrastructureRepo,
-    getActivitiesRepo,getSchoollistRepo,getCompareSchoollistRepo} from './apicalls/school';
+    getActivitiesRepo,getSchoollistRepo,getCompareSchoollistRepo, getSchoolByIdRepo} from './apicalls/school';
 
 export const getSchoolsList = () => {
     return function(dispatch, getState){
@@ -154,7 +154,6 @@ export const getSchoolDetails =(id)=>{
 export const setFilter = (params) => {
     return function(dispatch){
         dispatch ({type:"SET_FILTER_PARAMS",payload:params});
-       // console.log('asddd');
         dispatch(getSchoolsList());
     }   
 }

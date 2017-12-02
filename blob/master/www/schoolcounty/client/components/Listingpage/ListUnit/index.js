@@ -17,7 +17,6 @@ class ListUnit extends Component {
 
   render() {
 
-    console.log('compolis',this.props);
      const {details} = this.props;
 
     return (

@@ -143,7 +143,7 @@ class Filter extends Component {
 		}
 
 			var infraId = selected;
-			console.log('sylafli',selected);
+
 		this.props.setFilterParams({'infra': infraId})
 	}
 

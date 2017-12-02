@@ -6,7 +6,7 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Home from '../../components/Home'
 
-import {getSchoolsList} from '../../actions/schools'
+import {getSchoolsList, setFilter} from '../../actions/schools'
 
 class App extends Component {
 
@@ -16,19 +16,18 @@ class App extends Component {
 
     componentWillMount(){
           //action to get schools data
-          this.props.getSchools();
+          //this.props.getSchools();
       }
 
 
   render() {
-    console.log('home',this.props.schools.schoolList);
     const { todos, actions, children } = this.props
     return (
         <body>
         <Header />
 
 
-        <Home />
+        <Home schools={this.props.schools} setFilter={this.props.setFilter} />
 
 
         <Footer/>
@@ -40,7 +39,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
     return {
-        schools: state.schools
+        schools: state.schools.schoolList
     }
 }
 
@@ -49,6 +48,9 @@ function mapDispatchToProps(dispatch) {
     return {
         getSchools: () => {
             dispatch(getSchoolsList())
+        },
+        setFilter: (params) => {
+            dispatch(setFilter(params))
         }
     }
 }
