@@ -37,7 +37,8 @@ class Search extends Component {
         let html = [];
         if (fetched) {
             for (let school in list ){
-                html.push(<li>{list[school].name}</li>)
+                html.push(<li key={list[school].id}><Link style={{lineHeight: '1.1em'}} class="open-sans_sb mbs font-size-medium rs-schoolName" 
+                        to={"/details"} query={{ id: list[school].id }}>{list[school].name}</Link></li>)
             }
         }
         return html;
@@ -46,32 +47,27 @@ class Search extends Component {
 
     render(){
         return(
+
+                <div>
                 <div class="col-xs-8 col-xs-offset-2">
-                    <div class="input-group">
-                        <div class="input-group-btn search-panel">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                <span id="search_concept">Filter by</span> <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li onClick={() => this.selectFilter('name')}>School Name</li>
-                                <li onClick={() => this.selectFilter('city')}>City</li>
-                                <li onClick={() => this.selectFilter('pincode')}>Pincode</li>
-                            </ul>
-                        </div>
+                    <div style={{display:'inline'}}>
+                        <select class="form-control" style={{width:'18%',float:'left'}}>
+                            <option onClick={() => this.selectFilter('name')}>School Name</option>
+                            <option onClick={() => this.selectFilter('city')}>City</option>
+                            <option onClick={() => this.selectFilter('pincode')}>Pincode</option>
+                        </select>
                         <input  type="hidden" name="search_param"  id="search_param"/>
-                        <input onChange={this.setKeyWord} value={this.state.keyword} style={{top: '70px !important'}}type="text" class="form-control"  name="x" placeholder="Search term..." />
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button" onClick={() => this.search()}>
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
+                        <input onChange={this.setKeyWord} value={this.state.keyword} style={{top: '70px !important'}} id="myInput" type="text" class="form-control"  name="x" placeholder="Search term..." />
+                        <img class="form-control" src="/assets/img/searchicon.png" onClick={() => this.search()} style={{width:'5%'}}/>
                         <div class='listing'>
-                            <ul>
+                            <ul id='myUL'>
                             {this.showSchools()}
                             </ul>
                         </div>
                     </div>
+                </div>  
                 </div>
+
         )
     }
 }

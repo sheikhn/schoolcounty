@@ -41,11 +41,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
               <Header />
               <main class="cd-main-content" style={{top: '70px'}}>
 
-              <div class="cd-tab-filter-wrapper" style={{top: '70px'}}>
-                  <div class="cd-tab-filter">
-                      <Search setFilter={this.props.setFilter} schools={this.props.schools.schoolList}/>
-                  </div>
-                </div>
+              <SearchFilter setFilter={this.props.setFilter} schools={this.props.schools}/>
               
                 
 
