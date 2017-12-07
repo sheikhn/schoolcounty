@@ -21,7 +21,7 @@ class SearchFilter extends Component{
     setKeyWord(e) {
         this.setState({
             keyword: e.target.value
-        }, this.search());
+        }, this.search);
     }
 
     search() {

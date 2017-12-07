@@ -36,6 +36,11 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
     render() {
 
+          let schoolList = null;
+          if (this.props.schools.schoolList.fetched){
+              schoolList = <Listingpage schools={this.props.schools.schoolList} history={this.props.history}/>;
+          }
+
         return (
             <div>   
               <Header />
@@ -45,7 +50,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
               
                 
 
-                <section class="cd-gallery">
+                <section>
                   <div id="map">
                     <GoogleMapReact
                         api={'AIzaSyB-GPNJUs1UB3t-rQ8dQAd7BNAyDBYOCXQ'}
@@ -61,9 +66,9 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
                   </div>
                   <ul>
 
-                     <Listingpage schools={this.props.schools.schoolList} history={this.props.history}/>
+                      {schoolList}
 
-                    <li class="mix">
+                    <li class="">
                       <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
                     </li>

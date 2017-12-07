@@ -2,30 +2,36 @@
 import React,{Component} from 'react'
 import {Link} from 'react-router'
 
+const SEARCH_BY_NAME = 'name';
+const SEARCH_BY_CITY = 'city';
+const SEARCH_BY_PINCODE = 'pincode';
+
 class Search extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            filterName: 'name',
+            filterName: SEARCH_BY_NAME,
             keyword: ''
         }
         this.setKeyWord = this.setKeyWord.bind(this);
+        this.selectFilter = this.selectFilter.bind(this);
     }
 
-    selectFilter(filter) {
+    selectFilter(e) {
         this.setState({
-            filterName: filter
+            filterName: e.target.value
         })
     }
 
     setKeyWord(e) {
         this.setState({
             keyword: e.target.value
-        }, this.search());
+        }, this.search);
     }
 
     search() {
+        console.log(this.state);
         let filter = {};
         let filterName = this.state.filterName;
         filter[filterName] = this.state.keyword;
@@ -51,10 +57,10 @@ class Search extends Component {
                 <div>
                 <div class="col-xs-8 col-xs-offset-2">
                     <div style={{display:'inline'}}>
-                        <select class="form-control" style={{width:'18%',float:'left'}}>
-                            <option onClick={() => this.selectFilter('name')}>School Name</option>
-                            <option onClick={() => this.selectFilter('city')}>City</option>
-                            <option onClick={() => this.selectFilter('pincode')}>Pincode</option>
+                        <select onChange={this.selectFilter} class="form-control" style={{width:'18%',float:'left'}}>
+                            <option value={SEARCH_BY_NAME} >School Name</option>
+                            <option value={SEARCH_BY_CITY} >City</option>
+                            <option value={SEARCH_BY_PINCODE} >Pincode</option>
                         </select>
                         <input  type="hidden" name="search_param"  id="search_param"/>
                         <input onChange={this.setKeyWord} value={this.state.keyword} style={{top: '70px !important'}} id="myInput" type="text" class="form-control"  name="x" placeholder="Search term..." />
