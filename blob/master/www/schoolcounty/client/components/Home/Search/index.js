@@ -31,11 +31,12 @@ class Search extends Component {
     }
 
     search() {
-        console.log(this.state);
-        let filter = {};
-        let filterName = this.state.filterName;
-        filter[filterName] = this.state.keyword;
-        this.props.setFilter(filter);
+        if (this.state.keyword != '') {
+            let filter = {};
+            let filterName = this.state.filterName;
+            filter[filterName] = this.state.keyword;
+            this.props.setFilter(filter);
+        }
     }
 
     showSchools() {
@@ -43,8 +44,11 @@ class Search extends Component {
         let html = [];
         if (fetched) {
             for (let school in list ){
-                html.push(<li key={list[school].id}><Link style={{lineHeight: '1.1em'}} class="open-sans_sb mbs font-size-medium rs-schoolName" 
-                        to={"/details"} query={{ id: list[school].id }}>{list[school].name}</Link></li>)
+                html.push(
+                    <li key={list[school].id}>
+                        <Link style={{lineHeight: '1.1em'}}
+                        to={"/details"} query={{ id: list[school].id }}>{list[school].name}</Link></li>
+                )
             }
         }
         return html;

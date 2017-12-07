@@ -23,7 +23,7 @@ class App extends Component {
   render() {
     const { todos, actions, children } = this.props
     return (
-        <body>
+        <div>
         <Header />
 
 
@@ -31,7 +31,7 @@ class App extends Component {
 
 
         <Footer/>
-        </body>
+        </div>
 
     )
   }
