@@ -6,7 +6,7 @@ class Navbar extends Component{
     render(){
         return(
 
-            <nav class="main-nav navbar navbar-fixed-top" style={{backgroundColor: 'mediumslateblue'}}>
+            <nav class="main-nav navbar navbar-fixed-top" style={{backgroundColor: 'mediumslateblue',marginBottom:'0px !important'}}>
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -14,7 +14,7 @@ class Navbar extends Component{
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <Link class="navbar-brand" to={"/"} style={{color: '#fff',fontSize: '50px'}}>SchoolCounty</Link>
+                        <Link class="navbar-brand" to={"/"} style={{color: 'black',fontSize: '16px'}}>SchoolCounty</Link>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav navbar-right">

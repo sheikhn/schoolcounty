@@ -70,7 +70,7 @@ class Search extends Component {
                         <input onChange={this.setKeyWord} value={this.state.keyword} style={{top: '70px !important'}} id="myInput" type="text" class="form-control"  name="x" placeholder="Search term..." />
                         <img class="form-control" src="/assets/img/searchicon.png" onClick={() => this.search()} style={{width:'5%'}}/>
                         <div class='listing'>
-                            <ul id='myUL'>
+                            <ul id='myUL' class="searchlist">
                             {this.showSchools()}
                             </ul>
                         </div>

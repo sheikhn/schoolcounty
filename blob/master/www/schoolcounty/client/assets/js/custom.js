@@ -1,5 +1,29 @@
 $(document).ready(function(){
 
+/*$('body').click(function(e) {
+	alert('asd');
+    if (!$(e.target).closest('.searchlist').length){
+        $('.searchlist').hide();
+    }
+});*/
+
+
+// Add minus icon for collapse element which is open by default
+$(".collapse.in").each(function(){
+	$(this).siblings(".panel-heading").find(".glyphicon").addClass("glyphicon-minus").removeClass("glyphicon-plus");
+});
+
+// Toggle plus minus icon on show hide of collapse element
+$(".collapse").on('show.bs.collapse', function(){
+	$(this).parent().find(".glyphicon").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+}).on('hide.bs.collapse', function(){
+	$(this).parent().find(".glyphicon").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+});
+
+$('#myInput').change(function(e) {
+        $('.searchlist').show();
+});
+
  $('.search-panel .dropdown-menu').find('a').click(function(e) {
 		e.preventDefault();
 		var param = $(this).attr("href").replace("#","");

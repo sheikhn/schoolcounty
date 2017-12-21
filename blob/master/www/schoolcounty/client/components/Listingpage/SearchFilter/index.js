@@ -47,19 +47,38 @@ class SearchFilter extends Component{
 
 		return(
 
-				<div class="cd-tab-filter-wrapper">
-					<div class="cd-tab-filter">
-						<ul class="cd-filters">
-							<li class="placeholder"><a data-type="all" href="#0">All</a></li>
-							<li class="filter" onClick={() => this.selectFilter('name')}><a class="selected" >Name</a></li>
-							<li class="filter" onClick={() => this.selectFilter('city')}><a>City</a></li>
-							<li class="filter" onClick={() => this.selectFilter('pincode')}><a>PinCode</a></li>
-							<div style={{display: 'inline-block'}}>
-							<input onChange={this.setKeyWord} value={this.state.keyword} style={{top: '70px !important'}} type="text" class="form-control"  name="x" placeholder="Search term..." />
-							</div>
-						</ul>
-					</div>
-				</div>
+            <div class="col-md-12">
+
+            <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-plus"></span> 
+                            Search
+                           </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="cd-tab-filter">
+                            <ul class="cd-filters">
+                                <li class="placeholder"><a data-type="all" href="#0">All</a></li>
+                                <li class="filter" onClick={() => this.selectFilter('name')}><a class="selected" >Name</a></li>
+                                <li class="filter" onClick={() => this.selectFilter('city')}><a>City</a></li>
+                                <li class="filter" onClick={() => this.selectFilter('pincode')}><a>PinCode</a></li>
+                                <div style={{display: 'inline-block'}}>
+                                <input onChange={this.setKeyWord} value={this.state.keyword} style={{top: '70px !important'}} type="text" class="form-control"  name="x" placeholder="Search term..." />
+                                </div>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>    
+
+
+			
+						
 
 			
 			)

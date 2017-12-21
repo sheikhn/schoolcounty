@@ -13,8 +13,9 @@ class SchoolDetails extends Component{
 
 	componentWillMount(){
           //action to get schools data
-          let id =this.props.location.query.id
-          console.log('SD',this.props.getSchoolDetail(id));
+          let id =this.props.location.query.id;
+          this.props.getSchoolDetail(id);
+         // console.log('SD',this.props.getSchoolDetail(id));
       
       }
 

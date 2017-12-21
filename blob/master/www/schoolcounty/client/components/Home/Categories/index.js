@@ -4,7 +4,7 @@ import React,{Component} from 'react'
 class Categories extends Component{
     render(){
         return(
-            <div>
+            <div class="jumbotron" >
 
         <div class="container-fluid bg-3 text-center">
             <h3>Categories</h3><br/>

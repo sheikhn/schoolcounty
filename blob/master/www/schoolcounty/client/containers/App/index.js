@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Home from '../../components/Home'
+import Categories from '../../components/Home/Categories/index';
 
 import {getSchoolsList, setFilter} from '../../actions/schools'
 
@@ -29,6 +30,7 @@ class App extends Component {
 
         <Home schools={this.props.schools} setFilter={this.props.setFilter} />
 
+        <Categories />
 
         <Footer/>
         </div>

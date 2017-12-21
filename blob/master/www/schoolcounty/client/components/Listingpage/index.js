@@ -58,7 +58,7 @@ class Listingpage extends Component{
         }
 
         return(
-            <div>
+            <div class="col-md-12">
             {schoolListDiv}
             </div>
         )

@@ -73,7 +73,7 @@ class Filter extends Component {
 			
 			infraList.push(
 			<li key={infrastructuresIndex}>
-					<input class="selectInfra" onClick={() => this.setInfraFilter()} data-filter=".radio2" type="radio" name={'radio'+infrastructuresIndex} value={infrastructures[infrastructuresIndex].id} id={'radioinfra'+infrastructuresIndex}/>
+					<input class="selectInfra" onClick={() => this.setInfraFilter()} data-filter="check1" type="checkbox" name={'checkboxin'+infrastructuresIndex} value={infrastructures[infrastructuresIndex].id} id={'radioinfra'+infrastructuresIndex}/>
 					<label class="radio-label" for={'radioinfra'+infrastructuresIndex}>{infrastructure.name}</label>
 				</li>
 			);
@@ -91,8 +91,8 @@ class Filter extends Component {
 			
 			activitieList.push(
 			<li key={activitiesIndex}>
-					<input class="filter" data-filter=".radio2" type="radio" name="radioButton" id={'radio'+activitiesIndex}/>
-					<label class="radio-label" for={'radio'+activitiesIndex}>{activitie.name}</label>
+					<input class="selectAct" onClick={() => this.setActivitiesFilter()} data-filter="check1" type="checkbox" name={'checkboxact'+activitiesIndex} value={activitie.id} id={'checkbox'+activitiesIndex}/>
+					<label class="radio-label" for={'checkbox'+activitiesIndex}>{activitie.name}</label>
 				</li>
 			);
 		}
@@ -131,6 +131,22 @@ class Filter extends Component {
 		this.props.setFilterParams({'level': levelId})
 	}
 
+	setActivitiesFilter(event) {
+		
+
+		var checkboxes = document.getElementsByClassName('selectAct');
+		var selected = [];
+		for (var i=0; i<checkboxes.length; i++) {
+		    if (checkboxes[i].checked) {
+		        selected.push(checkboxes[i].value);
+		    }
+		}
+
+			var ccaId = selected;
+
+		this.props.setFilterParams({'cca': ccaId})
+	}
+
 	setInfraFilter(event) {
 		
 
@@ -167,16 +183,6 @@ class Filter extends Component {
 
 			<div class="cd-filter">
 				<form>
-					<div class="cd-filter-block">
-						<h4>Search</h4>
-
-						<div class="cd-filter-content">
-							<input type="search" placeholder="Try color-1,color-2,color-3..."/>
-						</div>
-					</div>
-
-
-
 
 					<div class="cd-filter-block">
 							<h4>Syllabus</h4>
@@ -224,8 +230,6 @@ class Filter extends Component {
 					</div>
 
 				</form>
-
-				<a href="#0" class="cd-close">Close</a>
 			</div>
 
 

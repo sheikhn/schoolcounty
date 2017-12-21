@@ -1,9 +1,128 @@
+.Header{
+  height:50px;
+}
+
+.searchlist{
+  position: absolute;
+   list-style-type: none;
+          padding-left: 133px;
+    width: 91%;
+}
+
+.footerlinks{
+  color:black !important;
+}
+.footerlinks li a{
+  color:black !important;
+}
+
+.cd-tab-filter ul {
+    background: transparent;
+    position: static;
+    box-shadow: none;
+    text-align: center;
+    list-style: none;
+}
+
+.cd-tab-filter li {
+    display: inline-block;
+}
+
+.cd-tab-filter a {
+    display: inline-block;
+    padding: 0 1em;
+    width: auto;
+    color: #9a9a9a;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.cd-tab-filter a.selected {
+    background: transparent;
+    color: #41307c;
+    box-shadow: inset 0 -2px 0 #41307c;
+}
+
+.cd-filter-block h4 {
+    position: relative;
+    margin-bottom: .2em;
+    padding: 10px 0 10px 20px;
+    color: #9a9a9a;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.3rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.cd-filter-block input[type='search'] {
+    border-color: transparent;
+    background-color: #e6e6e6;
+    font-size: 1.6rem !important;
+}
 
 
+.cd-filter-block input[type='search'], .cd-filter-block input[type='text'], .cd-filter-block select {
+    width: 100%;
+    padding: .8em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    box-shadow: none;
+}
+
+.cd-filter-block .list li {
+    position: relative;
+    margin-bottom: .8em;
+}
+
+.cd-filter-block input[type=radio], .cd-filter-block input[type=checkbox] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.cd-filter-block .checkbox-label, .cd-filter-block .radio-label {
+    padding-left: 24px;
+    font-size: 1.4rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
 
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
 
+#myInput {
+    float: left;
+  width: 77%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
 
 
 
@@ -31,10 +150,11 @@
     
     /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #f2f2f2;
+      background-color: mediumslateblue;
       padding: 25px;
     }
    
+
 
 	/* When the input field gets focus, change its width to 100% 
 	input[type=text]:focus {
@@ -374,7 +494,7 @@ xsigin/signup popup
   display: block;
 }
 
-.jumbotron{
+.jumbotronimage{
 background: url("../img/h11-background-img.jpg") no-repeat center center;
 }
 
@@ -590,3 +710,995 @@ color:#fff;
 }
 
 /***********/
+
+
+/*school  list css */
+
+   .form-control.input-field-md {
+        width: 100%;
+        height: 60px;
+    }
+}.ptn, .pvn, .pan {
+     padding-top: 0;
+ }
+.pts, .pvs, .pas {
+    padding-top: 5px;
+}
+.ptm, .pvm, .pam {
+    padding-top: 10px;
+}
+.ptl, .pvl, .pal {
+    padding-top: 20px;
+}
+.prn, .phn, .pan {
+    padding-right: 0;
+}
+.prs, .phs, .pas {
+    padding-right: 5px;
+}
+.prm, .phm, .pam {
+    padding-right: 10px;
+}
+.prl, .phl, .pal {
+    padding-right: 20px;
+}
+.pbn, .pvn, .pan {
+    padding-bottom: 0;
+}
+.pbs, .pvs, .pas {
+    padding-bottom: 5px;
+}
+.pbm, .pvm, .pam {
+    padding-bottom: 10px;
+}
+.pbl, .pvl, .pal {
+    padding-bottom: 20px;
+}
+.pln, .phn, .pan {
+    padding-left: 0;
+}
+.pls, .phs, .pas {
+    padding-left: 5px;
+}
+.plm, .phm, .pam {
+    padding-left: 10px;
+}
+.pll, .phl, .pal {
+    padding-left: 20px;
+}
+.plxl, .phxl, .paxl {
+    padding-left: 40px;
+}
+.pbxl, .pvxl, .paxl {
+    padding-bottom: 40px;
+}
+.prxl, .phxl, .paxl {
+    padding-right: 40px;
+}
+.ptxl, .pvxl, .paxl {
+    padding-top: 40px;
+}
+.mtn, .mvn, .man {
+    margin-top: 0;
+}
+.mts, .mvs, .mas {
+    margin-top: 5px;
+}
+.mtm, .mvm, .mam {
+    margin-top: 10px;
+}
+.mtl, .mvl, .mal {
+    margin-top: 20px;
+}
+.mrn, .mhn, .man {
+    margin-right: 0;
+}
+.mrs, .mhs, .mas {
+    margin-right: 5px;
+}
+.mrm, .mhm, .mam {
+    margin-right: 10px;
+}
+.mrl, .mhl, .mal {
+    margin-right: 20px;
+}
+.mbn, .mvn, .man {
+    margin-bottom: 0;
+}
+.mbs, .mvs, .mas {
+    margin-bottom: 5px;
+}
+.mbm, .mvm, .mam {
+    margin-bottom: 10px;
+}
+.mbl, .mvl, .mal {
+    margin-bottom: 20px;
+}
+.mln, .mhn, .man {
+    margin-left: 0;
+}
+.mls, .mhs, .mas {
+    margin-left: 5px;
+}
+.mlm, .mhm, .mam {
+    margin-left: 10px;
+}
+.mll, .mhl, .mal {
+    margin-left: 20px;
+}
+.mlxl, .mhxl, .maxl {
+    margin-left: 40px;
+}
+.mbxl, .mvxl, .maxl {
+    margin-bottom: 40px;
+}
+.mrxl, .mhxl, .maxl {
+    margin-right: 40px;
+}
+.mtxl, .mvxl, .maxl {
+    margin-top: 40px;
+}
+.pt-1 {
+    padding-top: 1%}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.fn {
+    float: none;
+}
+.clearfloat {
+    clear: both;
+    height: 0;
+    font-size: 1px;
+    line-height: 0;
+}
+.db {
+    display: block;
+}
+.di {
+    display: inline;
+}
+.dib {
+    display: inline-block;
+}
+.dn {
+    display: none;
+}
+.tal {
+    text-align: left;
+}
+.tac {
+    text-align: center;
+}
+.tar {
+    text-align: right;
+}
+.vat {
+    vertical-align: top;
+}
+.vam {
+    vertical-align: middle;
+}
+.vab {
+    vertical-align: bottom;
+}
+.pa {
+    position: absolute;
+}
+.pf {
+    position: fixed;
+}
+.pr {
+    position: relative;
+}
+.ps {
+    position: static;
+}
+.zir-1 {
+    position: relative;
+    z-index: 1;
+}
+.ma {
+    margin: auto;
+}
+.oh {
+    overflow: hidden;
+}
+.oa {
+    overflow: auto;
+}
+.ov {
+    overflow: visible;
+}
+
+.mix{
+  display: inline-block;
+}
+
+.mix{
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*school  details css */
+
+#hero {
+    background-image: url(../img/background_detail.jpg);
+    color: white;
+    font-size: 14px;
+}
+
+#hero .school-name-container>h1.school-name {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+#hero h1 {
+    padding-top: 10px;
+    font-family: 'RobotoSlab-Bold';
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.breadcrumbs {
+    background-color: #002c47;
+    color: #999999;
+    padding: 10px 0;
+}
+
+#hero .school-info {
+    text-align: left;
+    width: 100%;
+}
+
+#hero .school-info {
+    margin: auto;
+    text-align: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+
+#hero .school-info {
+    padding: 15px 0 10px 0;
+}
+
+#hero a:not(.info-circle) {
+    color: white;
+    font-size: 14px;
+}
+#hero .info-circle {
+    background-color: #3f658d;
+}
+#hero h1 {
+    padding-top: 10px;
+    font-family: 'RobotoSlab-Bold';
+    font-size: 36px;
+    font-weight: 900;
+}
+@media (max-width: 991px) {
+    #hero h1 {
+        text-align: center;
+        font-size: 21px;
+        padding-top: 0;
+    }
+}#hero .school-contact, #hero .school-info {
+     display: block;
+ }
+#hero .school-contact {
+    padding-top: 1rem;
+}
+#hero .school-contact__item:first-of-type {
+    padding-left: 0px;
+}
+#hero .school-contact__item:last-of-type {
+    padding-right: 0px;
+}
+#hero .school-info {
+    padding: 15px 0 10px 0;
+}
+#hero .school-info__item:first-of-type {
+    padding-left: 0px;
+}
+#hero .school-info__item:last-of-type {
+    padding-right: 0px;
+}
+#hero .school-contact__item {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 0;
+}
+@media (min-width: 750px) {
+    #hero .school-contact__item {
+        display: inline-block;
+        padding: 0 10px 5px 0;
+        margin: 0 10px 0 0;
+        border-right: 1px solid rgba(255, 255, 255, 0.17);
+        text-align: left;
+        max-width: none;
+    }
+}#hero .school-contact__more {
+     display: none;
+ }
+@media (min-width: 768px) {
+    #hero .school-contact__more {
+        display: inline-block;
+    }
+}#hero .school-contact__item:last-of-type {
+     border-right: none;
+ }
+#hero .school-contact__address .badge, #hero .school-contact__phone .badge, #hero .school-contact__home-page-url .badge {
+    display: inline-block;
+    padding-top: 3px;
+}
+#hero .school-info {
+    margin: auto;
+    text-align: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+@media (min-width: 992px) {
+    #hero .school-info {
+        text-align: left;
+        width: 100%}
+}@media (max-width: 991px) {
+    #hero .school-info .school-info-reviews-mobile {
+        padding-right: 0px;
+    }
+}#hero .school-info a.see-more {
+     margin-top: 10px;
+     color: #26abe2;
+     display: block;
+ }
+@media (min-width: 992px) {
+    #hero .school-info a.see-more {
+        display: none;
+    }
+}#hero .school-info__item {
+     display: inline-block;
+     padding: 0 34px;
+     border-left: 1px solid rgba(255, 255, 255, 0.17);
+     font-size: 21px;
+     font-family: 'opensans-semibold';
+     text-align: center;
+ }
+@media (max-width: 767px) {
+    #hero .school-info__item {
+        padding: 0 10px;
+    }
+}#hero .school-info__item:first-of-type {
+     border-left: none;
+ }
+@media (max-width: 991px) {
+    #hero .school-info__item: nth-last-of-type(-n+4) {
+    display: none;
+}
+}#hero .vertical-items {
+     margin: 20px auto 0;
+     max-width: 275px;
+ }
+#hero .school-info__item-mobile {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+    text-align: left;
+    padding: 2px 0;
+}
+@media (min-width: 992px) {
+    #hero .school-info__item-mobile {
+        display: none;
+    }
+}#hero .school-info__item-mobile span:not(.label) {
+     float: right;
+ }
+#hero .school-info__gs-rating .icon-hint {
+    margin-left: -1px;
+}
+#hero .school-info__five-star-rating {
+    cursor: pointer;
+}
+@media (max-width: 767px) {
+    #hero .school-info__five-star-rating {
+        font-size: 14px;
+    }
+}#hero .label {
+     opacity: 0.6;
+     font-size: 13px;
+     font-weight: 600;
+     line-height: 1.8;
+     text-align: center;
+     text-transform: uppercase;
+ }
+#hero .label-owl {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.8;
+    text-align: center;
+    text-transform: uppercase;
+}
+#hero .osp-badge {
+    vertical-align: middle;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url(/assets/school_profiles/claimed_badge-de6d5de66a9980477996d99dac965137.png) no-repeat;
+}
+#hero .osp-label {
+    vertical-align: middle;
+    font-size: 16px;
+    font-family: opensans-semibold;
+    color: #2ba3dc;
+}
+#hero .school-name-container>h1.school-name {
+    display: inline-block;
+    margin-right: 25px;
+}
+#hero .school-name-container>span {
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+@media (max-width: 767px) {
+    #hero .school-name-container {
+        text-align: center;
+    }
+    #hero .school-name-container>h1.school-name {
+        display: block;
+        margin-right: 0px;
+    }
+    #hero .school-name-container>span {
+        display: block;
+    }
+}
+
+.static-container>.right_rail {
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    height: 100%;
+}
+
+
+#toc .toc-container-box {
+     margin: 53px auto 88px auto;
+ }
+@media (min-width: 768px) {
+    #toc .toc-container-box {
+        margin-right: 0px;
+    }
+}#toc .info-circle {
+     margin-bottom: 3px;
+ }
+#toc .icon-chevron-right {
+    color: #c1d2d9;
+    float: right;
+    font-size: 10px;
+}
+#toc .denominator {
+    font-size: 7px;
+}
+#toc .toc-section-title {
+    font-size: 20px;
+    font-family: opensans-semibold;
+    padding-bottom: 0px;
+    vertical-align: middle;
+}
+@media (min-width: 768px) {
+    #toc .toc-section-title {
+        padding-bottom: 26px;
+    }
+}#toc .toc-entry {
+     margin-right: 30px;
+     margin-bottom: 5px;
+     border-bottom: solid 1px #dbe6eb;
+     padding-bottom: 5px;
+     vertical-align: middle;
+ }
+@media (max-width: 767px) {
+    #toc .toc-entry {
+        margin-right: 0px;
+    }
+}#toc .toc-entry a {
+     color: #26abe2;
+     font-family: opensans-semibold;
+     line-height: 34px;
+ }
+#toc .toc-entry:last-child {
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+#toc .gs-rating {
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 32px;
+    color: #FFF;
+    float: right;
+    margin-right: 7px;
+}
+#toc .gs-badge {
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFF;
+    background-color: #2ba3dc;
+    margin-right: 10px;
+}
+#toc .gs-link {
+    float: right;
+}
+#toc .gs-link-text {
+    float: left;
+}
+@media only screen and (max-width: 768px) {
+    #toc .toc-entry: last-child {
+        padding-bottom: 10px;
+    }
+}
+
+.nearby-school .rating {
+    width: 50px;
+    vertical-align: top;
+    text-align: center;
+    margin: auto;
+}
+
+.nearby-school>div {
+    display: inline-block;
+}
+
+.nearby-school .circle-rating {
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.circle-rating--small {
+    font-family: 'robotoslab-bold';
+    border-radius: 50%;
+    height: 38px;
+    width: 38px;
+    text-align: center;
+    font-size: 19px;
+    line-height: 38px;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.circle-rating--8 {
+    background-color: #6ba822;
+}
+
+.nearby-school .circle-rating {
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.circle-rating--small {
+    font-family: 'robotoslab-bold';
+    border-radius: 50%;
+    height: 38px;
+    width: 38px;
+    text-align: center;
+    font-size: 19px;
+    line-height: 38px;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.circle-rating--large-responsive {
+    font-family: 'robotoslab-bold';
+    border-radius: 50%;
+    height: 62px;
+    width: 62px;
+    text-align: center;
+    font-size: 31px;
+    line-height: 62px;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+}
+.circle-rating--large-responsive a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+.circle-rating--large-responsive span {
+    font-size: .4em;
+    opacity: 0.7;
+}
+@media (min-width: 0) and (max-width: 767px) {
+    .circle-rating--large-responsive {
+        font-family: 'robotoslab-bold';
+        border-radius: 50%;
+        height: 38px;
+        width: 38px;
+        text-align: center;
+        font-size: 19px;
+        line-height: 38px;
+        color: white;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .circle-rating--large-responsive a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+    }
+    .circle-rating--large-responsive span {
+        font-size: .4em;
+        opacity: 0.7;
+    }
+}.circle-rating--1 {
+     background-color: #f26b16;
+ }
+.circle-rating--2 {
+    background-color: #e78818;
+}
+.circle-rating--3 {
+    background-color: #dca21a;
+}
+.circle-rating--4 {
+    background-color: #d2b81b;
+}
+.circle-rating--5 {
+    background-color: #bdc01e;
+}
+.circle-rating--6 {
+    background-color: #a3be1f;
+}
+.circle-rating--7 {
+    background-color: #86b320;
+}
+.circle-rating--8 {
+    background-color: #6ba822;
+}
+.circle-rating--9 {
+    background-color: #559f24;
+}
+.circle-rating--10 {
+    background-color: #439326;
+}
+.circle-rating--equity-blue {
+    font-family: 'robotoslab-bold';
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 50px;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #22a4dd;
+}
+.circle-rating--equity-blue a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+.circle-rating--equity-blue span {
+    font-size: .4em;
+    opacity: 0.7;
+}
+.circle-rating--equity-blue span {
+    font-size: 25px;
+}
+.circle-rating--xtra-small {
+    font-family: 'robotoslab-bold';
+    border-radius: 50%;
+    height: 26px;
+    width: 26px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 26px;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+}
+.circle-rating--xtra-small a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+.circle-rating--xtra-small span {
+    font-size: .4em;
+    opacity: 0.7;
+}
+.circle-rating--small {
+    font-family: 'robotoslab-bold';
+    border-radius: 50%;
+    height: 38px;
+    width: 38px;
+    text-align: center;
+    font-size: 19px;
+    line-height: 38px;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+}
+.circle-rating--small a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+.circle-rating--small span {
+    font-size: .4em;
+    opacity: 0.7;
+}
+.circle-rating--medium {
+    font-family: 'robotoslab-bold';
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 50px;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+}
+.circle-rating--medium a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+.circle-rating--medium span {
+    font-size: .4em;
+    opacity: 0.7;
+}
+.circle-rating--large {
+    font-family: 'robotoslab-bold';
+    border-radius: 50%;
+    height: 62px;
+    width: 62px;
+    text-align: center;
+    font-size: 31px;
+    line-height: 62px;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+}
+.circle-rating--large a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+.circle-rating--large span {
+    font-size: .4em;
+    opacity: 0.7;
+}
+
+.table-dark {
+    color: #fff;
+    background-color: #212529;
+}
+
+
+
+/*listing css */
+
+.ptn, .pvn, .pan {
+     padding-top: 0;
+ }
+.pts, .pvs, .pas {
+    padding-top: 5px;
+}
+.ptm, .pvm, .pam {
+    padding-top: 10px;
+}
+.ptl, .pvl, .pal {
+    padding-top: 20px;
+}
+.prn, .phn, .pan {
+    padding-right: 0;
+}
+.prs, .phs, .pas {
+    padding-right: 5px;
+}
+.prm, .phm, .pam {
+    padding-right: 10px;
+}
+.prl, .phl, .pal {
+    padding-right: 20px;
+}
+.pbn, .pvn, .pan {
+    padding-bottom: 0;
+}
+.pbs, .pvs, .pas {
+    padding-bottom: 5px;
+}
+.pbm, .pvm, .pam {
+    padding-bottom: 10px;
+}
+.pbl, .pvl, .pal {
+    padding-bottom: 20px;
+}
+.pln, .phn, .pan {
+    padding-left: 0;
+}
+.pls, .phs, .pas {
+    padding-left: 5px;
+}
+.plm, .phm, .pam {
+    padding-left: 10px;
+}
+.pll, .phl, .pal {
+    padding-left: 20px;
+}
+.plxl, .phxl, .paxl {
+    padding-left: 40px;
+}
+.pbxl, .pvxl, .paxl {
+    padding-bottom: 40px;
+}
+.prxl, .phxl, .paxl {
+    padding-right: 40px;
+}
+.ptxl, .pvxl, .paxl {
+    padding-top: 40px;
+}
+.mtn, .mvn, .man {
+    margin-top: 0;
+}
+.mts, .mvs, .mas {
+    margin-top: 5px;
+}
+.mtm, .mvm, .mam {
+    margin-top: 10px;
+}
+.mtl, .mvl, .mal {
+    margin-top: 20px;
+}
+.mrn, .mhn, .man {
+    margin-right: 0;
+}
+.mrs, .mhs, .mas {
+    margin-right: 5px;
+}
+.mrm, .mhm, .mam {
+    margin-right: 10px;
+}
+.mrl, .mhl, .mal {
+    margin-right: 20px;
+}
+.mbn, .mvn, .man {
+    margin-bottom: 0;
+}
+.mbs, .mvs, .mas {
+    margin-bottom: 5px;
+}
+.mbm, .mvm, .mam {
+    margin-bottom: 10px;
+}
+.mbl, .mvl, .mal {
+    margin-bottom: 20px;
+}
+.mln, .mhn, .man {
+    margin-left: 0;
+}
+.mls, .mhs, .mas {
+    margin-left: 5px;
+}
+.mlm, .mhm, .mam {
+    margin-left: 10px;
+}
+.mll, .mhl, .mal {
+    margin-left: 20px;
+}
+.mlxl, .mhxl, .maxl {
+    margin-left: 40px;
+}
+.mbxl, .mvxl, .maxl {
+    margin-bottom: 40px;
+}
+.mrxl, .mhxl, .maxl {
+    margin-right: 40px;
+}
+.mtxl, .mvxl, .maxl {
+    margin-top: 40px;
+}
+.pt-1 {
+    padding-top: 1%}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.fn {
+    float: none;
+}
+.clearfloat {
+    clear: both;
+    height: 0;
+    font-size: 1px;
+    line-height: 0;
+}
+.db {
+    display: block;
+}
+.di {
+    display: inline;
+}
+.dib {
+    display: inline-block;
+}
+.dn {
+    display: none;
+}
+.tal {
+    text-align: left;
+}
+.tac {
+    text-align: center;
+}
+.tar {
+    text-align: right;
+}
+.vat {
+    vertical-align: top;
+}
+.vam {
+    vertical-align: middle;
+}
+.vab {
+    vertical-align: bottom;
+}
+.pa {
+    position: absolute;
+}
+.pf {
+    position: fixed;
+}
+.pr {
+    position: relative;
+}
+.ps {
+    position: static;
+}
+.zir-1 {
+    position: relative;
+    z-index: 1;
+}
+.ma {
+    margin: auto;
+}
+.oh {
+    overflow: hidden;
+}
+.oa {
+    overflow: auto;
+}
+.ov {
+    overflow: visible;
+}

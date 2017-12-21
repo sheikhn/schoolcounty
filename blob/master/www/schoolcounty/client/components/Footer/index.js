@@ -49,7 +49,7 @@ class Footer extends Component {
 
     render() {
         return (
-            <div>
+            <div class="footersection" class="col-md-12">
 
                 <Footerlinks/>
 

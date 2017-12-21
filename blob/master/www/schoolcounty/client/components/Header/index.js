@@ -10,7 +10,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
+      <div class="Header" style={{height:'50px'}}>
 
         <Navbar/>
 

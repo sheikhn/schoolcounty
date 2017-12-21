@@ -48,42 +48,37 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
               <SearchFilter setFilter={this.props.setFilter} schools={this.props.schools}/>
               
-                
+              <div class="col-md-12">
+                  <div class="col-md-3">
+                     <Filter setFilterParams={this.props.setFilter} filterParams={this.props.schools.schoolFilter}/>
 
-                <section>
-                  <div id="map">
-                    <GoogleMapReact
-                        api={'AIzaSyB-GPNJUs1UB3t-rQ8dQAd7BNAyDBYOCXQ'}
-                        defaultCenter={{lat: 12.971599, lng: 77.594563}}
-                        defaultZoom={10}
-                    >
-                      <AnyReactComponent
-                          lat={12.971599}
-                          lng={77.594563}
-                          text={'Kreyser Avrora'}
-                      />
-                    </GoogleMapReact>
                   </div>
-                  <ul>
+                  <div class="col-md-9">
 
-                      {schoolList}
+                  <section class="">
+                    <div id="map">
+                      <GoogleMapReact
+                          api={'AIzaSyB-GPNJUs1UB3t-rQ8dQAd7BNAyDBYOCXQ'}
+                          defaultCenter={{lat: 12.971599, lng: 77.594563}}
+                          defaultZoom={10}
+                      >
+                        <AnyReactComponent
+                            lat={12.971599}
+                            lng={77.594563}
+                            text={'Kreyser Avrora'}
+                        />
+                      </GoogleMapReact>
+                    </div>
+                    
 
-                    <li class="">
-                      <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                  </section>
 
-                    </li>
-                    <li class="gap"></li>
-                    <li class="gap"></li>
-                    <li class="gap"></li>
-                  </ul>
+                   {schoolList}
 
-                  <div class="cd-fail-message">No results found</div>
-                </section>
-
-                <Filter setFilterParams={this.props.setFilter} filterParams={this.props.schools.schoolFilter}/>
-
-                <a href="#0" class="cd-filter-trigger">Filters</a>
+                  </div>
+              </div>
               </main>
+              
               <Footer/>
             </div>
         )

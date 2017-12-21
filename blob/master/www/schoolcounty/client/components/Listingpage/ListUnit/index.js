@@ -15,12 +15,74 @@ class ListUnit extends Component {
     //this.props.setFilterParams({'compareId': compareId})
     }
 
+    getAddressline1() {
+
+    //const {details} = this.props;
+    const { address } = this.props.details;
+    let addressList = [];
+    for (let schoolAddressIndex in address ) {
+      let schoolAddresses = address[schoolAddressIndex];
+      console.log('address',schoolAddressIndex);
+
+       if(schoolAddresses.Address_Line_1 !== null){
+
+            addressList.push(
+                  <div class="fl">
+                    {schoolAddresses.Address_Line_1}
+                  </div>
+            );
+       }else{
+
+        addressList.push(
+             <div class="fl">
+               blank
+              </div>
+            );
+       }
+    }
+
+    return addressList;
+  }
+
+  getAddressline2() {
+
+    //const {details} = this.props;
+    const { address } = this.props.details;
+    let addressList = [];
+    for (let schoolAddressIndex in address ) {
+      let schoolAddresses = address[schoolAddressIndex];
+      //console.log('address',schoolAddressIndex);
+
+    if(schoolAddresses.Address_Line_2 !== null ){
+      addressList.push(
+          <div class="fl">
+            {schoolAddresses.Address_Line_2}
+          </div>
+      );
+
+      }else{
+         addressList.push(
+          <div class="fl">
+            blank
+          </div>
+      );
+
+      }
+
+    }
+
+    return addressList;
+  }
+
   render() {
 
      const {details} = this.props;
 
+     let getAddressline1 = this.getAddressline1(); 
+     let getAddressline2 = this.getAddressline2();  
+     
     return (
-       <div class="row">
+       <div class="col-md-12">
                   <div class="col-xs-7 col-sm-5 col-md-7 col-lg-6 clearfix school-info">
                     <div class=" fl js-schoolPhoto">
                       <img src="./../assets/img/product.jpg" alt="No school photo available" class="thumbnail-border"/>
@@ -37,27 +99,27 @@ class ListUnit extends Component {
                         <div class=" font-size-small rs-schoolAddress"></div>
                         <div class="clearfix visible-xs font-size-small">
                           <div class="prs fl ">Public district</div>
-                          <div class="fl">9-12,</div>
+                          {getAddressline1}
                         </div>
                       </div>
                       <div class="font-size-small mvm clearfix ptm ">
                         <div class="fl">
                           <span class="prm vam"><span class="iconx16-stars i-16-orange-star i-16-star-2"></span><span class="iconx16-stars i-16-grey-star i-16-star-3"></span></span>
-                          <a class="font-size-small js-reviewCount" href="/missouri/moberly/1249-Moberly-Sr.-High-School/#Reviews">reviews</a>
+                          {getAddressline2}
                         </div>
                         <div class="phm fl">|</div>
-                        <div class="prs fl">Public district</div>
-                        <div class="fl">9-12</div>
+                        <div class="prs fl">City</div>
+                         {getAddressline1}
                       </div>
                     </div>
                   </div>
                   <div class="col-xs-5 col-sm-4 col-md-3 col-lg-4 icons">
                     <div class="ptl "></div>
-                    <div class="row">
+                    <div class="col-md-12">
 
                       
                       <div class="col-xs-6 col-sm-4 mvl tac">
-                        <a href="/missouri/moberly/1249-Moberly-Sr.-High-School/">
+                       
 
   <span class="gs-rating circle-rating--5 circle-rating--xtra-small ma">
       
@@ -65,7 +127,7 @@ class ListUnit extends Component {
 
                           <div class="pts"></div>
                           <span class="tac font-size-xs db link-darkgray" style={{lineheight: '1.3em'}}>SchoolCounty<br/>Rating</span>
-                        </a>            </div>
+                                  </div>
                       
                       <div class="col-xs-6 col-sm-4 mtl mbs js-schoolFitScore">
                       </div>
