@@ -2,7 +2,7 @@ import axios from 'axios';
 export const getStatesRepo = () => {
     return axios({
         method: 'GET',
-        url: 'http://35.154.63.76/api/states/get-states',
+        url: 'http://localhost:8000/api/states/get-states',
     })
 };
 
@@ -10,7 +10,7 @@ export const getStatesRepo = () => {
 export const getLevelsRepo = () => {
     return axios({
         method: 'GET',
-        url: 'http://35.154.63.76/api/level/get-levels',
+        url: 'http://localhost:8000/api/level/get-levels',
     })
 };
 
@@ -19,7 +19,7 @@ export const getLevelsRepo = () => {
 export const getSyllabusRepo = () => {
     return axios({
         method: 'GET',
-        url: 'http://35.154.63.76/api/syllabus/get-syllabus',
+        url: 'http://localhost:8000/api/syllabus/get-syllabus',
     })
 };
 
@@ -27,21 +27,21 @@ export const getSyllabusRepo = () => {
 export const getInfrastructureRepo = () => {
     return axios({
         method: 'GET',
-        url: 'http://35.154.63.76/api/infrastructure/get-infrastructure',
+        url: 'http://localhost:8000/api/infrastructure/get-infrastructure',
     })
 };
 
 export const getActivitiesRepo = () => {
     return axios({
         method: 'GET',
-        url: 'http://35.154.63.76/api/activities/get-activities',
+        url: 'http://localhost:8000/api/activities/get-activities',
     })
 };
 
 export const getSchoollistRepo = (filter) => {
     return axios({
         method: 'GET',
-        url: 'http://35.154.63.76/api/school/get-schools',
+        url: 'http://localhost:8000/api/school/get-schools',
         params: filter
     })
 };
@@ -49,7 +49,7 @@ export const getSchoollistRepo = (filter) => {
 export const getCompareSchoollistRepo = (ids) => {
     return axios({
         method: 'GET',
-        url: 'http://35.154.63.76/api/school/get-schools',
+        url: 'http://localhost:8000/api/school/get-schools',
         params: {id: ids}
     })
 };
@@ -57,7 +57,7 @@ export const getCompareSchoollistRepo = (ids) => {
 export const getSchoolByIdRepo = (id) => {
     return axios({
         method: 'GET',
-        url: 'http://35.154.63.76/api/school/get-school',
+        url: 'http://localhost:8000/api/school/get-school',
         params: {'id': id}
     })
 };

@@ -18,6 +18,12 @@ class Search extends Component {
         this.selectFilter = this.selectFilter.bind(this);
     }
 
+    componentWillRecieveProps(newProps) {
+        if (this.props.schools.fetching && newProps.schools.fetched) {
+            this.showSchools();
+        }
+    }
+
     selectFilter(e) {
         this.setState({
             filterName: e.target.value
@@ -40,9 +46,8 @@ class Search extends Component {
     }
 
     showSchools() {
-        const {fetched, list} = this.props.schools;
+        const {list} = this.props.schools;
         let html = [];
-        if (fetched) {
             for (let school in list ){
                 html.push(
                     <li key={list[school].id}>
@@ -50,7 +55,6 @@ class Search extends Component {
                         to={"/details"} query={{ id: list[school].id }}>{list[school].name}</Link></li>
                 )
             }
-        }
         return html;
     }
 
@@ -68,7 +72,9 @@ class Search extends Component {
                         </select>
                         <input  type="hidden" name="search_param"  id="search_param"/>
                         <input onChange={this.setKeyWord} value={this.state.keyword} style={{top: '70px !important'}} id="myInput" type="text" class="form-control"  name="x" placeholder="Search term..." />
-                        <img class="form-control" src="/assets/img/searchicon.png" onClick={() => this.search()} style={{width:'5%'}}/>
+                        <Link href="/listing" >
+                            <img class="form-control" src="/assets/img/searchicon.png" onClick={() => this.search()} style={{width:'5%'}}/>
+                        </Link>
                         <div class='listing'>
                             <ul id='myUL' class="searchlist">
                             {this.showSchools()}

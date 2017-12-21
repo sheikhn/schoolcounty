@@ -20,12 +20,13 @@ class Details extends Component{
         let ccaIndex = cca;
       
         for (let ccaIndex in cca ) {
-            let ccas = cca[ccaIndex]
+            let ccas = cca[ccaIndex];
+            console.log(ccas);
            //console.log('ccas',ccas);
             activitiesList.push(
                 <tr key={ccaIndex}>
                   <th  scope="row">{ccaIndex}</th>
-                  <td>{ccas.school_cca_id}</td>
+                  <td>{ccas.cca_name}</td>
                 </tr>
             );
             
@@ -49,7 +50,7 @@ class Details extends Component{
             levelsList.push(
                 <tr key={levelsIndex}>
                   <th  scope="row">{levelsIndex}</th>
-                  <td>{level.school_level_id}</td>
+                  <td>{level.level_name}</td>
                 </tr>
             );
             
@@ -73,7 +74,7 @@ class Details extends Component{
             infraList.push(
                 <tr key={infraIndex}>
                   <th  scope="row">{infraIndex}</th>
-                  <td>{infras.school_infra_id}</td>
+                  <td>{infras.infra_name}</td>
                 </tr>
             );
             
@@ -97,7 +98,7 @@ class Details extends Component{
             syllabusList.push(
                 <tr key={syllabusIndex}>
                   <th  scope="row">{syllabusIndex}</th>
-                  <td>{syllabuses.school_syllabus_id}</td>
+                  <td>{syllabuses.syllabus_name}</td>
                 </tr>
             );
         }
