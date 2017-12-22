@@ -15,71 +15,16 @@ class ListUnit extends Component {
     //this.props.setFilterParams({'compareId': compareId})
     }
 
-    getAddressline1() {
-
-    //const {details} = this.props;
-    const { address } = this.props.details;
-    let addressList = [];
-    for (let schoolAddressIndex in address ) {
-      let schoolAddresses = address[schoolAddressIndex];
-      console.log('address',schoolAddressIndex);
-
-       if(schoolAddresses.Address_Line_1 !== null){
-
-            addressList.push(
-                  <div class="fl">
-                    {schoolAddresses.Address_Line_1}
-                  </div>
-            );
-       }else{
-
-        addressList.push(
-             <div class="fl">
-               blank
-              </div>
-            );
-       }
-    }
-
-    return addressList;
-  }
-
-  getAddressline2() {
-
-    //const {details} = this.props;
-    const { address } = this.props.details;
-    let addressList = [];
-    for (let schoolAddressIndex in address ) {
-      let schoolAddresses = address[schoolAddressIndex];
-      //console.log('address',schoolAddressIndex);
-
-    if(schoolAddresses.Address_Line_2 !== null ){
-      addressList.push(
-          <div class="fl">
-            {schoolAddresses.Address_Line_2}
-          </div>
-      );
-
-      }else{
-         addressList.push(
-          <div class="fl">
-            blank
-          </div>
-      );
-
-      }
-
-    }
-
-    return addressList;
-  }
+ 
 
   render() {
 
      const {details} = this.props;
-
-     let getAddressline1 = this.getAddressline1(); 
-     let getAddressline2 = this.getAddressline2();  
+     
+     const {address} = this.props.details;
+     console.log('ladn',this.props.details.address);
+     //let getAddressline1 = this.getAddressline1(); 
+     //let getAddressline2 = this.getAddressline2();  
      
     return (
        <div class="col-md-12">
@@ -87,7 +32,7 @@ class ListUnit extends Component {
                     <div class=" fl js-schoolPhoto">
                       <img src="./../assets/img/product.jpg" alt="No school photo available" class="thumbnail-border"/>
                     </div>
-                    <div class="fl pll">
+                    <div class="fl pll" style={{width:'100%'}}>
                       <div class="ptm notranslate">
                          <div class="mtm "></div>
                         <div>
@@ -99,17 +44,23 @@ class ListUnit extends Component {
                         <div class=" font-size-small rs-schoolAddress"></div>
                         <div class="clearfix visible-xs font-size-small">
                           <div class="prs fl ">Public district</div>
-                          {getAddressline1}
+                          <div class="fl">
+                            {address.Address_Line_1}
+                          </div>
                         </div>
                       </div>
                       <div class="font-size-small mvm clearfix ptm ">
                         <div class="fl">
                           <span class="prm vam"><span class="iconx16-stars i-16-orange-star i-16-star-2"></span><span class="iconx16-stars i-16-grey-star i-16-star-3"></span></span>
-                          {getAddressline2}
+                          <div class="fl">
+                          {address.Address_Line_2}
+                          </div>
                         </div>
                         <div class="phm fl">|</div>
                         <div class="prs fl">City</div>
-                         {getAddressline1}
+                        <div class="fl">
+                         {address.Address_Line_1}
+                         </div>
                       </div>
                     </div>
                   </div>
