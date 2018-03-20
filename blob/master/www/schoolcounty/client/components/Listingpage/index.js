@@ -50,15 +50,15 @@ class Listingpage extends Component{
         for (let schoolIndex in schoolList) {
             let schoolDetails = schoolList[schoolIndex];
             schoolListDiv.push(
-                <li class="mix color-3 check1 radio2 option3" key = {schoolIndex}>
+                
                     <ListUnit details={schoolDetails} addSchoolToCompare={this.addSchoolToCompare}
                     compareSchools={this.compareSchools} allowCompare={this.state.selectedSchools.length >1}      />
-                </li>
+               
             );
         }
 
         return(
-            <div class="col-md-12">
+            <div class="col-sm-8 col-xs-12">
             {schoolListDiv}
             </div>
         )

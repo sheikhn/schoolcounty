@@ -44,40 +44,15 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
         return (
             <div>   
               <Header />
-              <main class="cd-main-content" style={{top: '70px'}}>
+              <section class="clerfix">
+              <div class="container">
+              <div class="row">
+                {schoolList}
+                <Filter setFilterParams={this.props.setFilter} filterParams={this.props.schools.schoolFilter}/>
 
-              <SearchFilter setFilter={this.props.setFilter} schools={this.props.schools}/>
-              
-              <div class="col-md-12">
-                  <div class="col-md-3">
-                     <Filter setFilterParams={this.props.setFilter} filterParams={this.props.schools.schoolFilter}/>
-
-                  </div>
-                  <div class="col-md-9">
-
-                  <section class="">
-                    <div id="map">
-                      <GoogleMapReact
-                          api={'AIzaSyB-GPNJUs1UB3t-rQ8dQAd7BNAyDBYOCXQ'}
-                          defaultCenter={{lat: 12.971599, lng: 77.594563}}
-                          defaultZoom={10}
-                      >
-                        <AnyReactComponent
-                            lat={12.971599}
-                            lng={77.594563}
-                            text={'Kreyser Avrora'}
-                        />
-                      </GoogleMapReact>
-                    </div>
-                    
-
-                  </section>
-
-                   {schoolList}
-
-                  </div>
               </div>
-              </main>
+              </div>
+              </section>
               
               <Footer/>
             </div>

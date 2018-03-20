@@ -30,20 +30,18 @@ class Comparepage extends Component{
 
         let schoolUnits = this.getSchoolUnits();
         return(
-            <div style={{padding:"20px"}} >
+            <div>
 
             <CompareFilter/>
 
-            <div class="limit-width-1200">
-                <div class="mha oh js-comparedSchoolsListContainer">
-                    <div class="js-comparedSchoolsList" style={{width:"1200px"}}>
-                        {schoolUnits}
-                        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            <div class="container">
+                 <div class="col-sm-12 col-xs-12">
+                    <div class="row">
+                    {schoolUnits}   
                     </div>
                 </div>
             </div>
-
-
+            
             </div>
         )
     }

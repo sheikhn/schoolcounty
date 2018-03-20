@@ -181,56 +181,69 @@ class Filter extends Component {
 
 		return (
 
-			<div class="cd-filter">
-				<form>
-
-					<div class="cd-filter-block">
-							<h4>Syllabus</h4>
-							<ul class="cd-filter-content cd-filters list">
-									{syllabusList}
-							</ul>
-					</div>
-
-				   
-					<div class="cd-filter-block">
-						<h4>States</h4>
-
-						<div class="cd-filter-content">
-							<div class="cd-select cd-filters">
-								<select class="filter" name="selectThis" id="selectThis">
-									<option value="">Choose a state</option>
-									{stateList}
-								</select>
-							</div>
+		<div class="col-sm-4 col-xs-12">
+				<div class="sidebarInner sidebarCategory">
+					<div class="panel panel-default">
+						<div class="panel-heading">Search</div>
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="What are you looking for?" aria-describedby="basic-addon2" />
+							<a href="#" class="input-group-addon" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></a>
 						</div>
 					</div>
-				   
-					<div class="cd-filter-block">
-						<h4>Levels of Education</h4>
-
-						<ul class="cd-filter-content cd-filters list">
-							{schoolLevelList}
-						</ul>
+				</div>
+				<div class="sidebarInner sidebarCategory">
+					<div class="panel panel-default">
+						<div class="panel-heading">Syllabus</div>
+						<div class="panel-body">
+							<ul class="list-unstyle categoryList">
+								{syllabusList}
+							</ul>
+						</div>
 					</div>
-
-					<div class="cd-filter-block">
-						<h4>Infrastructure</h4>
-
-						<ul class="cd-filter-content cd-filters list">
-							{infrastructureList}
-						</ul>
+				</div>
+				<div class="sidebarInner sidebarCategory">
+					<div class="panel panel-default">
+						<div class="panel-heading">States</div>
+						<div class="panel-body">
+							<select class="filter" name="selectThis" id="selectThis">
+								<option value="">Choose a state</option>
+								{stateList}
+							</select>
+						</div>
 					</div>
-
-					<div class="cd-filter-block">
-						<h4>Extra and Co Curricular Activities</h4>
-
-						<ul class="cd-filter-content cd-filters list">
-							{activitiesList}
-						</ul>
+				</div>
+				<div class="sidebarInner sidebarCategory">
+					<div class="panel panel-default">
+						<div class="panel-heading">Levels of Education</div>
+						<div class="panel-body">
+							<ul class="list-unstyle categoryList">
+								{schoolLevelList}
+							</ul>
+						</div>
 					</div>
+				</div>
+				<div class="sidebarInner sidebarCategory">
+					<div class="panel panel-default">
+						<div class="panel-heading">Infrastructure</div>
+						<div class="panel-body">
+							<ul class="list-unstyle categoryList">
+								{infrastructureList}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="sidebarInner sidebarCategory">
+					<div class="panel panel-default">
+						<div class="panel-heading">Extra and Co Curricular Activities</div>
+						<div class="panel-body">
+							<ul class="list-unstyle categoryList">
+								{activitiesList}
+							</ul>
+						</div>
+					</div>
+				</div>
+		</div>
 
-				</form>
-			</div>
 
 
 		)

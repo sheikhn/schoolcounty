@@ -62,27 +62,39 @@ class Search extends Component {
     render(){
         return(
 
-                <div>
-                <div class="col-xs-8 col-xs-offset-2">
-                    <div style={{display:'inline'}}>
-                        <select onChange={this.selectFilter} class="form-control" style={{width:'18%',float:'left'}}>
-                            <option value={SEARCH_BY_NAME} >School Name</option>
-                            <option value={SEARCH_BY_CITY} >City</option>
-                            <option value={SEARCH_BY_PINCODE} >Pincode</option>
-                        </select>
-                        <input  type="hidden" name="search_param"  id="search_param"/>
-                        <input onChange={this.setKeyWord} value={this.state.keyword} style={{top: '70px !important'}} id="myInput" type="text" class="form-control"  name="x" placeholder="Search term..." />
-                        <Link href="/listing" >
-                            <img class="form-control" src="/assets/img/searchicon.png" onClick={() => this.search()} style={{width:'5%'}}/>
-                        </Link>
-                        <div class='listing'>
-                            <ul id='myUL' class="searchlist">
-                            {this.showSchools()}
-                            </ul>
+                
+                <section class="clearfix homeBanner" style={{backgroundImage: 'url(./assets/img/banner1.jpg)'}}>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="banerInfo">
+                          <h1>Explore. Discover. Share</h1>
+                          <p>SchoolCounty helps to find out great schools arround you</p>
+                          
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-addon">Find</div>
+                                <input type="text" class="form-control" id="findItem" placeholder="What are you looking for?" />
+                                <div class="input-group-addon addon-right"></div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-addon">Near</div>
+                                <input type="text" class="form-control" id="nearLocation" placeholder="Location" />
+                                <div class="input-group-addon addon-right"><i class="icon-listy icon-target" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <Link href="/listing" >
+                            <button type="submit" class="btn btn-primary">Search <i class="fa fa-search" aria-hidden="true"></i></button>
+                            </Link>
+                        
                         </div>
+                      </div>
                     </div>
-                </div>  
-                </div>
+                  </div>
+                </section>  
+              
 
         )
     }
