@@ -26,9 +26,7 @@ class SchoolCompare extends Component {
         const {compareSchoolList} = this.props;
        // console.log('comapre',this.props);
         if (!compareSchoolList.fetched){
-             return (<div>
-                 no data
-             </div>)
+             return (<div></div>)
         }
 
         return (

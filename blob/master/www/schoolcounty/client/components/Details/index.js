@@ -334,7 +334,7 @@ class Details extends Component{
                 <div class="clearfix map-sidebar map-right">
 
                      <GoogleMapReact
-                          api={'AIzaSyB-GPNJUs1UB3t-rQ8dQAd7BNAyDBYOCXQ'}
+                           bootstrapURLKeys={{ key: 'AIzaSyB-GPNJUs1UB3t-rQ8dQAd7BNAyDBYOCXQ' }}
                           defaultCenter={{lat: 12.971599, lng: 77.594563}}
                           defaultZoom={10}
                       >
