@@ -24,7 +24,7 @@ class Footer extends Component {
             <div class="col-sm-7 col-xs-12">
               <div class="footerText">
                 <a href="/" class="footerLogo">
-                  <div class="title" style={{    width: '21%'}}>
+                  <div class="title" style={{    width: '25%'}}>
                   <p style={{padding: '10px',borderStyle: 'solid',color: '#2196f3',fontSize: '18px'}}>SchoolCounty</p>
                 </div>
                 </a>

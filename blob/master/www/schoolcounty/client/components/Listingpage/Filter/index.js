@@ -194,17 +194,17 @@ class Filter extends Component {
 							</div>
 						</div>
 						<div class="sidebarInner sidebarCategory">
-							<div class="panel panel-default">
+							<div class="cd-filter-block">
 								<div class="panel-heading">Syllabus</div>
 								<div class="panel-body">
-									<ul class="list-unstyle categoryList">
+									<ul class="cd-filter-content cd-filters list">
                       {syllabusList}
 									</ul>
 								</div>
 							</div>
 						</div>
 						<div class="sidebarInner sidebarCategory">
-							<div class="panel panel-default">
+							<div class="cd-filter-block">
 								<div class="panel-heading">States</div>
 								<div class="panel-body">
 									<select class="filter" name="selectThis" id="selectThis">

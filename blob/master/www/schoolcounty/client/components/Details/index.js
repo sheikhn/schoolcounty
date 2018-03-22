@@ -186,12 +186,12 @@ class Details extends Component{
                         <h3>Features</h3>
                         <ul class="list-inline featuresItems">
                             <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Wi-Fi</li>
-                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Street Parking</li>
-                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Alcohol</li>
-                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Vegetarian</li>
-                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Reservations</li>
-                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Pets Friendly</li>
-                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Accept Credit Card</li>
+                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Auditorium</li>
+                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Hostel</li>
+                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Food Park</li>
+                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Library</li>
+                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Music Room</li>
+                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Swimming Pool</li>
                         </ul>
                     </div>
                     <div class="schoollinks">
@@ -258,7 +258,7 @@ class Details extends Component{
                             <img src="./assets/img/list-user-1.jpg" class="media-object img-circle" alt="Image User" />
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">Jessica Brown</h4>
+                                <h4 class="media-heading">Ram</h4>
                                 <ul class="list-inline rating">
                                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -275,7 +275,7 @@ class Details extends Component{
                             <img src="./assets/img/list-user-2.jpg" class="media-object img-circle" alt="Image User" />
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">Jessica Brown</h4>
+                                <h4 class="media-heading">Ram</h4>
                                 <ul class="list-inline rating">
                                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -292,7 +292,7 @@ class Details extends Component{
                             <img src="./assets/img/list-user-3.jpg" class="media-object img-circle" alt="Image User" />
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">Jessica Brown</h4>
+                                <h4 class="media-heading">Ram</h4>
                                 <ul class="list-inline rating">
                                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -334,7 +334,7 @@ class Details extends Component{
                 <div class="clearfix map-sidebar map-right">
 
                      <GoogleMapReact
-                           bootstrapURLKeys={{ key: 'AIzaSyB-GPNJUs1UB3t-rQ8dQAd7BNAyDBYOCXQ' }}
+                           bootstrapURLKeys={{ key: 'AIzaSyCaEgtfrfucMK5zaqZo9LrPltHDTEjV_7w' }}
                           defaultCenter={{lat: 12.971599, lng: 77.594563}}
                           defaultZoom={10}
                       >
@@ -359,13 +359,13 @@ class Details extends Component{
                             </li>
                             <li>
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                                <a href="#">info @example.com</a> <a href="#">info@startravelbangladesh.com</a>
+                                <a href="#">info @example.com</a> <a href="#">info@school.com</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="listSidebar">
-                    <h3>Opening Hours</h3>
+                    <h3>School Hours</h3>
                     <ul class="list-unstyled sidebarList">
                         <li>
                             <span class="pull-left">Monday</span>
