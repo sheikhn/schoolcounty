@@ -11,41 +11,26 @@ class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            filterName: SEARCH_BY_NAME,
-            keyword: ''
-        }
-        this.setKeyWord = this.setKeyWord.bind(this);
-        this.selectFilter = this.selectFilter.bind(this);
-    }
-
-    componentWillRecieveProps(newProps) {
-        if (this.props.schools.fetching && newProps.schools.fetched) {
-            this.showSchools();
+            city: '',
+            name: ''
         }
     }
 
-    selectFilter(e) {
-        this.setState({
-            filterName: e.target.value
-        })
+
+    setCity(e) {
+        this.props.setFilter({
+            city: e.target.value
+        });
     }
 
-    setKeyWord(e) {
-        this.setState({
-            keyword: e.target.value
-        }, this.search);
+    setName(e) {
+        this.props.setFilter({
+            name : e.target.value
+        });
     }
 
-    search() {
-        if (this.state.keyword != '') {
-            let filter = {};
-            let filterName = this.state.filterName;
-            filter[filterName] = this.state.keyword;
-            this.props.setFilter(filter);
-        }
-    }
 
-    showSchools() {
+    /*showSchools() {
         const {list} = this.props.schools;
         let html = [];
             for (let school in list ){
@@ -56,13 +41,11 @@ class Search extends Component {
                 )
             }
         return html;
-    }
+    }*/
 
 
     render(){
         return(
-
-                
                 <section class="clearfix homeBanner" style={{backgroundImage: 'url(./assets/img/banner1.jpg)'}}>
                   <div class="container">
                     <div class="row">
@@ -70,25 +53,23 @@ class Search extends Component {
                         <div class="banerInfo">
                           <h1>Explore. Discover. Share</h1>
                           <p>SchoolCounty helps to find out great schools arround you</p>
-                          
                             <div class="form-group">
                               <div class="input-group">
                                 <div class="input-group-addon">Find</div>
-                                <input type="text" class="form-control" id="findItem" placeholder="What are you looking for?" />
+                                <input onKeyUp={(event) => this.setName(event)} type="text" class="form-control" id="findItem" placeholder="What are you looking for?" />
                                 <div class="input-group-addon addon-right"></div>
                               </div>
                             </div>
                             <div class="form-group">
                               <div class="input-group">
                                 <div class="input-group-addon">Near</div>
-                                <input type="text" class="form-control" id="nearLocation" placeholder="Location" />
+                                <input onKeyUp={(event) => this.setCity(event)} type="text" class="form-control" id="nearLocation" placeholder="Location" />
                                 <div class="input-group-addon addon-right"><i class="icon-listy icon-target" aria-hidden="true"></i></div>
                               </div>
                             </div>
-                            <Link href="/listing" >
+                            <Link to="/listing" >
                             <button type="submit" class="btn btn-primary">Search <i class="fa fa-search" aria-hidden="true"></i></button>
                             </Link>
-                        
                         </div>
                       </div>
                     </div>

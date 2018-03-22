@@ -5,6 +5,7 @@ import {getStatesRepo,getLevelsRepo,getSyllabusRepo,getInfrastructureRepo,
 export const getSchoolsList = () => {
     return function(dispatch, getState){
         let state = getState();
+        //console.log('filter', state.schools.getFilter);
         getSchoollistRepo(state.schools.getFilter)
             .then((response) => {
                  let schoolList =response.data.data;

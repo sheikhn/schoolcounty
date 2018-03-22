@@ -59,7 +59,7 @@ class Listingpage extends Component{
 
         return(
             <div class="col-sm-8 col-xs-12">
-            {schoolListDiv}
+            {schoolListDiv.length ? schoolListDiv : 'There are no schools for your search'}
             </div>
         )
     }

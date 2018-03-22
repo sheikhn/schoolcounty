@@ -22,7 +22,6 @@ class ListUnit extends Component {
      const {details} = this.props;
      
      const {address} = this.props.details;
-     console.log('ladn',this.props.details.address);
      //let getAddressline1 = this.getAddressline1(); 
      //let getAddressline2 = this.getAddressline2();  
      

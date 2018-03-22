@@ -48,7 +48,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
               <div class="container">
               <div class="row">
                 {schoolList}
-                <Filter setFilterParams={this.props.setFilter} filterParams={this.props.schools.schoolFilter}/>
+                <Filter setFilterParams={this.props.setFilter} filterParams={this.props.schools.schoolFilter} filter={this.props.schools.getFilter} />
 
               </div>
               </div>

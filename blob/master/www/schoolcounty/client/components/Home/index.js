@@ -1,7 +1,8 @@
 
 import React,{Component} from 'react'
+import { connect } from 'react-redux'
 import Search from "./Search/index";
-
+import {setFilter} from '../../actions/schools'
 class Home extends Component{
 
     constructor(props) {
@@ -21,4 +22,23 @@ class Home extends Component{
     }
 }
 
-export default Home
+function mapStateToProps(state) {
+    return {
+        schools: state.schools
+    }
+}
+
+
+function mapDispatchToProps(dispatch) {
+    return {
+        setFilter: (params) => {
+            console.log(params);
+            dispatch(setFilter(params));
+        }
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Home)
